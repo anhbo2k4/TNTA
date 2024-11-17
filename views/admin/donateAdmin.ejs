@@ -1,0 +1,73 @@
+<%- include('head') %>
+<style>
+  .hp-main-layout-content {
+    padding: 20px;
+  }
+  .table th, .table td {
+    text-align: center;
+  }
+  .pagination a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #007bff;
+  }
+  .pagination a:hover {
+    text-decoration: underline;
+  }
+</style>
+<body>
+ <main class="hp-bg-color-dark-90 d-flex min-vh-100">
+   <%- include('navbar') %>
+   <div class="hp-main-layout-content">
+      <div class="row mb-32 g-32">
+         <div class="col flex-grow-1 overflow-hidden">
+            <div class="row g-32">
+               <div class="col-12">
+                 <div class="hp-border-color-black-0 hp-border-color-dark-80 hp-bg-black-20 hp-bg-dark-80 hp-rounded-12">
+                    <div class="card-body">
+                       <h1 class="hp-mb-0">Quản lý quyên góp</h1>
+                       <div class="table-responsive">
+                        <table class="table table-striped">
+                           <thead>
+                              <tr>
+                                 <th>STT</th>
+                                 <th>Tên người quyên góp</th>
+                                 <th>Số tiền($)</th>
+                                 <th>Ngày</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <% 
+                              donations.forEach((donation, index) => { 
+                              %>
+                                 <tr>
+                                    <td><%= (currentPage - 1) * (typeof itemsPerPage !== 'undefined' ? itemsPerPage : 10) + index + 1 %></td>
+                                    <td><%= donation.name %></td>
+                                    <td><%= donation.amount %>$</td>
+                                    <td><%= new Date(donation.created_at).toLocaleString() %></td>
+                                 </tr>
+                              <% }) %>
+                           </tbody>
+                        </table>
+                       </div>
+                       <div class="pagination">
+                          <% if (currentPage > 1) { %>
+                             <a href="?page=<%= currentPage - 1 %>">Previous</a>
+                          <% } %>
+                          <% if (currentPage < totalPages) { %>
+                             <a href="?page=<%= currentPage + 1 %>">Next</a>
+                          <% } %>
+                       </div>
+                    </div>
+                 </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    console.log('Trang quản lý quyên góp đã được tải.');
+  });
+</script>

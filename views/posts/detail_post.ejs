@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Leaf AidNews</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="shortcut icon" href="/logo.png" type="image/x-icon">
+    <style>
+        body {
+           
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            margin-top: 30px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .text-muted {
+            color: #7f8c8d !important;
+            font-size: 0.9rem;
+        }
+
+        .img-fluid {
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .content {
+            line-height: 1.8;
+            color: #34495e;
+        }
+
+        .list-group-item {
+            border: none;
+            padding: 12px 15px;
+            margin-bottom: 5px;
+            background-color: #f8f9fa;
+            border-radius: 5px !important;
+            transition: all 0.3s ease;
+        }
+
+        .list-group-item:hover {
+            background-color: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .list-group-item a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        h4 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .post-header-image {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .post-title {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            width: 90%;
+        }
+
+        .post-title h1 {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .search-box {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            margin-top: 20px;
+        }
+
+        .search-box .form-control {
+            border-radius: 8px 0 0 8px;
+        }
+
+        .search-box .btn-warning {
+            border-radius: 0 8px 8px 0;
+        }
+
+        .img-thumbnail {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+        }
+        /* Responsive styles */
+        @media (max-width: 1000px) {
+            .container {
+                padding: 20px;
+            }
+
+            .post-title h1 {
+                font-size: 1.75rem;
+            }
+
+            .post-title p {
+                font-size: 0.875rem;
+            }
+
+            .search-box .input-group {
+                flex-direction: column;
+            }
+
+            .post-header-image {
+                height: 300px;
+            }
+
+            .search-box .form-control {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 10px;
+            }
+
+            .search-box .btn-warning {
+                width: 100%;
+                border-radius: 8px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .post-header-image {
+                height: 250px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .search-box {
+                margin: 10px 0;
+            }
+
+            .search-box .form-control {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 10px;
+            }
+
+            .search-box .btn-warning {
+                width: 100%;
+                border-radius: 8px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .post-header-image {
+                height: 200px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .img-fluid {
+                margin: 10px 0;
+            }
+
+            .post-title h1 {
+                font-size: 1.25rem;
+            }
+
+            .post-title p {
+                font-size: 0.75rem;
+            }
+
+            .list-group-item {
+                padding: 8px 10px;
+            }
+
+            .search-box {
+                margin-top: 10px;
+            }
+
+            .search-box .form-control {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 10px;
+            }
+
+            .search-box .btn-warning {
+                width: 100%;
+                border-radius: 8px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .container {
+                padding: 5px;
+            }
+
+            .post-title h1 {
+                font-size: 0.9rem;
+            }
+
+            .post-title p {
+                font-size: 0.8rem;
+            }
+
+            .img-fluid {
+                margin: 5px 0;
+            }
+
+            .list-group-item {
+                padding: 5px 8px;
+            }
+
+            .search-box {
+                margin-top: 5px;
+            }
+
+            .search-box .form-control {
+                width: 100%;
+                height: 40px;
+                border-radius: 5px;
+                margin-bottom: 5px;
+            }
+
+            .search-box .btn-warning {
+                width: 100%;
+                border-radius: 5px;
+            }
+            .mt-4 .content {
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 1.5rem;
+            }   
+        }
+
+    #like-button {
+        background-color: red;
+        color: white;
+        border: none;
+        transition: transform 0.2s;
+        position: relative;
+    }
+
+    #like-button:active {
+        transform: scale(1.1);
+    }
+
+    #like-button .heart {
+        display: inline-block;
+        margin-left: 5px;
+        color: white;
+        font-size: 1.2em;
+        transition: transform 0.2s;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        opacity: 0;
+    }
+
+    #like-button .heart.animate {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+
+    #like-button .heart-fly {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.5em;
+        color: red;
+        animation: fly 1s ease-out forwards;
+    }
+
+    @keyframes fly {
+        0% {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-50%, -100px);
+        }
+    }
+    </style>
+
+    <link rel="stylesheet" href="/css/navbar.css">
+</head>
+
+<body>
+    <%- include('../navbar') %>
+    <div class="post-header-image" style="background-image: url('<%- post.imageUrl %>');">
+        <div class="overlay"></div>
+        <div class="post-title">
+            <h1><%- post.title %></h1>
+            <p class="text-white"> <%= new Date(post.createdAt).toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }) %></p>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1><%- post.title %></h1>
+                <p class="text-muted"><%= new Date(post.createdAt).toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }) %></p>
+                <p class="text-muted">Views: <%= post.views %></p>
+
+                <% if (post.imageUrl) { %>
+                    <img src="<%- post.imageUrl %>" class="img-fluid" alt="<%- post.title %>">
+                <% } %>
+                
+                <div class="mt-4 content">
+                    <p><%- post.content %></p>
+                </div>  
+                <hr>
+                <div class="mt-4">
+                    <button id="like-button" class="btn btn-primary">Concerned (<span id="like-count"><%= post.likes %></span>)</button>
+                </div>
+            </div>
+
+            <div class="col-lg-4" id="related-posts">
+                <h4>Related Posts</h4>
+                <ul class="list-group">
+                    <% categoryPosts.slice(0, 4).forEach(categoryPost => { %>
+                        <li class="list-group-item d-flex align-items-center">
+                            <% if (categoryPost.imageUrl) { %>
+                                <img src="<%- categoryPost.imageUrl %>" alt="<%- categoryPost.title %>" class="img-thumbnail mr-2" style="width: 50px; height: 50px;">
+                            <% } %>
+                            <a href="/post/<%- categoryPost.slug %>"><%- categoryPost.title %></a>
+                        </li>
+                    <% }); %>
+                </ul>
+
+                <!-- Search Box -->
+                <div class="search-box p-3">
+                    <form action="/search" method="GET">
+                        <div class="input-group">
+                            <input type="text" class="form-control border-0 bg-light" placeholder="Search more posts" name="query">
+                            <button class="btn btn-warning" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../footer') %>
+    <script>
+        document.getElementById('like-button').addEventListener('click', async function() {
+            const response = await fetch('/post/like/<%= post.id %>', {
+                method: 'POST'
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                document.getElementById('like-count').innerText = data.likes;
+            } else {
+                console.error('Failed to like the post');
+            }
+        });
+        document.getElementById('like-button').addEventListener('click', async function() {
+        // Tạo hiệu ứng nhiều trái tim bay lên theo nhiều hướng
+        for (let i = 0; i < 5; i++) {
+            const heart = document.createElement('span');
+            heart.classList.add('heart-fly');
+            heart.innerHTML = '❤️';
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.animationDelay = `${Math.random() * 0.5}s`;
+            this.appendChild(heart);
+
+            // Xóa trái tim sau khi hoàn thành hiệu ứng
+            setTimeout(() => heart.remove(), 1000);
+        }
+
+        // Gửi yêu cầu like
+        const response = await fetch('/post/like/<%= post.id %>', {
+            method: 'POST'
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            document.getElementById('like-count').innerText = data.likes;
+        } else {
+            console.error('Failed to like the post');
+        }
+    });
+    </script>
+</body>
+</html>

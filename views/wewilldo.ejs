@@ -1,0 +1,68 @@
+<%- include('head') %>  
+<body>
+    <%- include('navbar') %>
+    <div class="content-wewilldo">
+        <div class="content-wewilldo-header">
+           <div class="content-wewilldo-header-text">
+            <p>Our Commitment to </p><span>Alleviating Disease and Poverty</span>
+           </div>
+           <div class="content-wewilldo-header-img">
+            <img src="img/wewilldo.jpg" alt="c:\Users\thean\Downloads\wewilldo.jpg">
+        </div>
+        </div>
+        <div class="content-wewilldo-container">
+            <div class="content-wewilldo-container-item">
+               <div class="content-wewilldo-container-item-text">
+                <strong>Empowering Communities through Health, Nutrition, and Clean Water</strong>
+               </div>
+               <div class="content-wewilldo-container-item-content">
+               <p>As a humanitarian organization, we focus on tackling the root causes of poverty and disease through impactful, sustainable actions:</p>
+               <ul>
+                   <li><strong><a href="/we-will-do/fighting-hunger">Fighting Hunger:</a></strong> We provide food assistance, promote community nutrition education, and support local farming to build resilient food systems.</li>
+                   <li><strong><a href="/we-will-do/preventing-disease">Preventing Disease:</a></strong> We partner with health providers to ensure access to essential medical supplies, vaccinations, and healthcare education, reducing the spread of preventable diseases.</li>
+                   <li><strong><a href="/we-will-do/ensuring-clean-water">Ensuring Clean Water and Sanitation:</a></strong> By building wells, providing water purification systems, and promoting sanitation, we improve health outcomes and access to clean water in vulnerable communities.</li>
+               </ul>
+               <p>Through these actions, we aim to create healthier, self-sufficient communities and a brighter future for all.</p>
+               </div>
+            </div>
+            <div class="content-wewilldo-slider">
+                <div class="slider-wrapper">
+                    <div class="slide">
+                        <img src="https://res.cloudinary.com/dj0ipxidd/image/upload/v1731438325/jifpperov9sxcs1man17.jpg">
+                        <p>A volunteer hands a backpack to a woman in a humanitarian aid area, possibly a refugee camp</p>
+                    </div>
+                    <div class="slide">
+                        <img src="https://res.cloudinary.com/dj0ipxidd/image/upload/v1731441552/d9h4nfe965wo8zcejdg2.jpg">
+                        <p> Women who are receiving guidance or support for health and recovery issues</p>
+                    </div>
+                    <div class="slide">
+                        <img src="https://res.cloudinary.com/dj0ipxidd/image/upload/v1731444359/mddvajefefbgzzs8rx63.jpg">
+                        <p>"1 million meals with meat" for the poor and homeless</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide');
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+        const offset = -index * 100; // Tính toán vị trí dịch chuyển
+        sliderWrapper.style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+    }
+
+    // Tự động chuyển slide sau mỗi 3 giây
+    setInterval(nextSlide, 3000);
+});
+    </script>
+    <%- include('footer') %>
+</body>

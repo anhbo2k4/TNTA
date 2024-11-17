@@ -1,0 +1,178 @@
+<%- include('head') %>  
+<body>
+    <%- include('navbar') %>
+    <div class="content-contact">
+        <div class="content-contact-header">
+            <div class="content-contact-header-text">
+                <p>Contact Us</p>
+            </div>
+            <div class="content-contact-header-img">
+                <img src="/img/contact.jpg" alt="Contact Header">
+            </div>
+        </div>
+        <div class="content-contact-container">
+            <div class="content-contact-container-item">
+                <div class="content-contact-container-item-text">
+                    <strong>CONTACT US NOW</strong>
+                    <p>Let us know if you have anything to say to us, if you want to rate our service or if you want to share where we need help or fill in now:</p>
+                </div>
+
+                <div class="content-contact-container-item-form">
+                <form id="contactForm" action="/contact" method="post">
+                    <div class="content-contact-container-item-form-item">
+                        <label for="name">Name</label>
+                        <input type="text" name="full_name" id="full_name" placeholder="Enter your name" >
+                    </div>
+                    <div class="content-contact-container-item-form-item">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="content-contact-container-item-form-item">
+                        <label for="phone">Phone</label>
+                        <input type="text" name="phone_number" id="phone_number" placeholder="Enter your phone" >
+                    </div>
+                    <div class="content-contact-container-item-form-item">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" placeholder="Enter your message"></textarea>
+                    </div>
+                    <div class="content-contact-container-item-form-item">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+                <script>
+                    let isSubmitting = false; // Variable to check submission status
+                    let submitTimeout; // Variable to store timeout
+
+                    document.getElementById('contactForm').addEventListener('submit', function(event) {
+                        event.preventDefault(); // Prevent default form action
+
+                        if (isSubmitting) {
+                            return; // Prevent multiple submissions
+                        }
+
+                        // Check input fields
+                        const fullName = document.getElementById('full_name').value.trim();
+                        const phoneNumber = document.getElementById('phone_number').value.trim();
+                        const message = document.getElementById('message').value.trim();
+                        let errorMessages = [];
+
+                        if (!fullName) {
+                            errorMessages.push('Please enter your name.');
+                        }
+                        if (!message) {
+                            errorMessages.push('Please enter your message.');
+                        }
+
+                        if (errorMessages.length > 0) {
+                            const errorContainer = document.createElement('div');
+                            errorContainer.style.color = 'red';
+                            errorMessages.forEach(msg => {
+                                const errorMessage = document.createElement('p');
+                                errorMessage.textContent = msg;
+                                errorMessage.style.transition = 'transform 0.5s ease-out';
+                                errorMessage.style.transform = 'translateX(0)';
+                                errorContainer.appendChild(errorMessage);
+                                setTimeout(() => {
+                                    errorMessage.style.transform = 'translateX(1000%)';
+                                    errorMessage.style.display = 'none';
+                                }, 3000); // Fly out effect after 3 seconds
+                            });
+                            document.getElementById('contactForm').appendChild(errorContainer);
+                            return;
+                        }
+
+                        isSubmitting = true; // Set submitting status
+
+                        // Submit form via AJAX
+                        var xhr = new XMLHttpRequest();
+                        xhr.open('POST', '/contact', true);
+                        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                        xhr.onreadystatechange = function() {
+                            if (xhr.readyState === XMLHttpRequest.DONE) {
+                                if (xhr.status === 201) {
+                                    document.getElementById('contactForm').reset();
+                                    var successMessage = document.createElement('p');
+                                    successMessage.textContent = 'Your message has been sent successfully';
+                                    successMessage.style.color = 'green';
+                                    successMessage.style.transition = 'transform 0.5s ease-out';
+                                    successMessage.style.transform = 'translateX(0)';
+                                    document.getElementById('contactForm').appendChild(successMessage);
+                                    setTimeout(() => {
+                                        successMessage.style.transform = 'translateX(1000%)';
+                                        successMessage.style.display = 'none';
+                                    }, 3000); // Fly out effect after 3 seconds
+                                } else {
+                                    var errorMessage = document.createElement('p');
+                                    errorMessage.textContent = 'An error occurred, please try again.';
+                                    errorMessage.style.color = 'red';
+                                    errorMessage.style.transition = 'transform 0.5s ease-out';
+                                    errorMessage.style.transform = 'translateX(0)';
+                                    document.getElementById('contactForm').appendChild(errorMessage);
+                                    setTimeout(() => {
+                                        errorMessage.style.transform = 'translateX(1000%)';
+                                        errorMessage.style.display = 'none';
+                                    }, 3000); // Fly out effect after 3 seconds
+                                }
+                                // Reset status after completion and set 5-minute timeout
+                                clearTimeout(submitTimeout);
+                                submitTimeout = setTimeout(function() {
+                                    isSubmitting = false;
+                                }, 30000); // 3000ms = 3s
+                            }
+                        };
+                        var formData = 'full_name=' + encodeURIComponent(fullName) + 
+                                       '&email=' + encodeURIComponent(email) + 
+                                       '&phone_number=' + encodeURIComponent(phoneNumber) + 
+                                       '&message=' + encodeURIComponent(message);
+                        xhr.send(formData);
+                    });
+                </script>
+            </div>
+            <div class="content-contact-container-item-text">
+                
+                <p>For general inquiries, partnerships, or information on donations, please reach out via email or fill out our contact form on our website. We’re here to assist you in any way we can to support our mission at Leaf Aid.</p>
+            </div>
+            <div class="content-contact-container-item-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.2721006567663!2d-81.7795068236781!3d33.4422167733928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f9b3f8f139c68f%3A0xee0b42496916024d!2sRed%20Leaf%20Ln%2C%20South%20Carolina%2029803%2C%20Hoa%20K%E1%BB%B3!5e0!3m2!1svi!2s!4v1731618666893!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="content-contact-container-item-text">
+                <div class="content-contact-container-item-text-item-container">
+                    <div class="content-contact-container-item-text-item">
+                        <p><strong>Office Hours:</strong></p>
+                        <p>Monday to Friday: 9:00 AM - 6:00 PM (EST)</p>
+                        <p>Saturday: 10:00 AM - 4:00 PM (EST)</p>
+                        <p>Sunday: Closed</p>
+                </div>
+                <div class="content-contact-container-item-text-item">
+                    <p><strong>Head Office Address:</strong></p>
+                    <p>Leaf AidUSA</p>
+                    <p>456 Charity Lane,</p>
+                    <p>New York, NY 10001, USA</p>
+                </div>
+                <div class="content-contact-container-item-text-item">
+                    <p><strong>Phone:</strong></p>
+                    <p>Toll-Free Helpline: <a href="tel:+18001234567">+1 (800) 123-4567</a></p>
+                    <p>Local: <a href="tel:+12125557890">+1 (212) 555-7890</a></p>
+                </div>
+                <div class="content-contact-container-item-text-item">
+                    <p><strong>Email:</strong></p>
+                    <p>General Inquiries: <a href="mailto:contact@Leaf Aid.org">contact@Leaf Aid.org</a></p>
+                    <p>Donations & Volunteer Support: <a href="mailto:support@Leaf Aid.org">support@Leaf Aid.org</a></p>
+                </div>
+                <div class="content-contact-container-item-text-item">
+                    <p><strong>Website:</strong></p>
+                    <p>Visit us at <a href="http://www.Leaf Aid.org" target="_blank">www.Leaf Aid.org</a></p>
+                </div>
+                <div class="content-contact-container-item-text-item">
+                    <p><strong>Follow Us on Social Media:</strong></p>
+                    <p>Facebook: <a href="https://www.facebook.com/Leaf AidUSA" target="_blank">@Leaf AidUSA</a></p>
+                    <p>Instagram: <a href="https://www.instagram.com/Leaf AidOfficial" target="_blank">@Leaf AidOfficial</a></p>
+                    <p>Twitter: <a href="https://www.twitter.com/Leaf AidUSA" target="_blank">@Leaf AidUSA</a></p>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    <%- include('footer') %>
+</body>

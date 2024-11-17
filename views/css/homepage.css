@@ -1,0 +1,1622 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    animation: fadeIn 1.5s ease-in-out;
+}
+body{
+    background-color: #f5f5f5;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.content{
+    position: relative;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.content-img img{
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+    animation: zoomIn 1.5s ease-in-out;
+}
+.content-text {
+    position: absolute;
+    top: 40.8%;
+    left: 26%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 30%;
+    height: 70%;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+.content-text h1{
+    font-size: 2em;
+    margin: 0 50px;
+    height: auto;
+    width: 60%;
+    text-align: start;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.content-text p{
+    font-size: 1.9em;
+    font-weight: bold;
+    margin: 40px 55px;
+    text-align: start;
+    width: 60%;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.content-text a{
+    display: inline-block;
+    margin-left: -265px;
+    transition: 0.3s;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.content-text a:hover{
+    background-color: #000000;
+    color: #fff;
+}
+.btnDonate {
+    background-color: #fff;
+    color: #f00;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.content-body {
+    background-color: #e6e8e5;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: left;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.content-body h2 {
+    margin-left: 20%;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333; 
+    width: 58%;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.content-body p {
+    margin-left: 20%;
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #555;
+    width: 54%;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.learn-more-button {
+    margin-left: 20%;
+    display: inline-block;
+    background-color: #e63946;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.learn-more-button:hover {
+    background-color: #d62839;
+}
+.container {
+    width: 1182px;
+    margin: 0 auto;
+    padding: 0px 9px;
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.container:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+}
+span.button {
+    background-color: #ee3824;
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 15px;
+    transition: 0.2s background-color, 0.2s color;
+    font-family: 'FrutigerPro', sans-serif;
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+    font-size: 125%;
+    font-weight: bold;
+    border-radius: 0;
+    animation: fadeIn 1.5s ease-in-out;
+}
+span.button:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+}
+span.arrow-link {
+    font-size: 93.75%;
+    color: #ee3824;
+    position: relative;
+    transition: color 0.2s;
+    padding: 0 14px 0 0;
+    animation: fadeIn 1.5s ease-in-out;
+}
+span.arrow-link:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    bottom: 4px;
+    transition: border-color 0.2s;
+    right: 4px;
+    border-color: transparent transparent transparent #ee3824;
+    border-width: 4px 0 4px 6px;
+}
+.arrow-over-image {
+    position: relative;
+    margin: 40px 0 60px 0;
+    overflow: hidden;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.arrow-over-image h1,.arrow-over-image h2,.arrow-over-image h3,.arrow-over-image h4,.arrow-over-image h5,.arrow-over-image h6 {
+    color: #fff;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.arrow-over-image p {
+    font-size: 112.5%;
+    line-height: 122.22222%;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.arrow-over-image p:last-child {
+    margin-bottom: 0;
+}
+.arrow-over-image p a.button,.arrow-over-image p span.button {
+    font-size: 111.11111%;
+    margin-top: 10px;
+    background: #fff;
+    color: #ee3824;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.arrow-over-image p a.button:hover,.arrow-over-image p span.button:hover {
+    background: #000;
+    color: #fff;
+}
+.arrow-over-image__link {
+    display: block;
+    overflow: hidden;
+    color: inherit;
+    text-decoration: none;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.arrow-over-image__link:hover span.button {
+    background: #000;
+    color: #fff;
+}
+.arrow-over-image__text-outer {
+    width: 534px;
+    display: block;
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.arrow-over-image__text-inner{
+    text-align: left;
+    color: #ffffff;
+    display: table;
+    height: 420px;
+    width: 70%;
+    background-color: #273a56;
+    padding: 40px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.arrow-over-image__text-inner:after {
+    content: '';
+    position: absolute;
+    left: calc(70% - 1px);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 242px 0 242px 85px;
+    border-color: transparent transparent transparent #273a56;
+    z-index: 1;
+    top: 50%;
+    margin-top: -242px;
+}
+.arrow-over-image--dark-blue p a.button,.arrow-over-image--dark-blue p span.button {
+    color: #273a56;
+}
+.arrow-over-image--dark-blue .arrow-over-image__text-inner {
+    background: #273a56;
+}
+.arrow-over-image--dark-blue .arrow-over-image__text-inner:after {
+    border-color: transparent transparent transparent #273a56;
+}
+.news{
+    text-align: center;
+    overflow: hidden;
+    padding: 135px 0 0 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #e6e8e5;
+    background-size: cover;
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.news::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -62px;
+    width: 100%;
+    background-image: url("https://www.map.org.uk/templates/default/images/stroke-texture-repeating.svg");
+    background-size: 800px 118px;
+    height: 118px;
+}
+a.news-header-link{
+    text-align: center;
+    float: right;
+    background-color: #ee3824;
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 15px;
+    transition: 0.2s background-color, 0.2s color;
+    font-family: 'FrutigerPro', sans-serif;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 125%;
+    font-weight: bold;
+    border-radius: 0;
+    margin-right: 0;
+    animation: fadeIn 1.5s ease-in-out;
+}
+a.news-header-link:hover{
+    background-color: #000;
+    color: #fff;
+}
+.news-header-text h2{
+    text-align: left;
+    margin-top: 0px;
+    font-family: 'FrutigerPro', sans-serif;
+    font-size: 250%;
+    line-height: 110%;
+    font-weight: 800;
+    color: #ee3824;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    transition: color 0.2s;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.news-feed {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px; /* Khoảng cách giữa các phần tử */
+    padding: 20px; /* Khoảng đệm xung quanh */
+    animation: fadeIn 1.5s ease-in-out;
+    width: 100%;
+}
+.news-item {
+    position: relative;
+    margin-top: 30px; /* Khoảng trống cho mũi tên */
+    overflow: hidden;
+    height: 800px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 4px solid #b6b6b6;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.news-item::before {
+    content: '';
+    position: absolute;
+    top: -10px; /* Mũi tên lên trên */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 10px 10px 10px; /* Kích thước mũi tên */
+    border-style: solid;
+    border-color: transparent transparent #fff transparent; /* Màu mũi tên */
+    z-index: 1; /* Mũi tên nằm trên cùng */
+}
+
+.news-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.news-item-link {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.news-item-link:hover {
+    color: #ee3824;
+    text-decoration: none;
+}
+
+.news-item-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.news-item-image:hover {
+    transform: scale(1.05);
+}
+
+.news-item-text {
+    text-align: left;
+    background-color: #fff;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.news-item-text-inner {
+    text-align: left;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.news-item-text-inner h6 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    transition: color 0.3s ease;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.news-item-text-inner h6:hover {
+    color: #ee3824;
+}
+
+.news-item-text-inner p {
+    margin-top: 30px;
+    font-size: 1em;
+    font-weight: normal;
+    margin-left: 5px;
+    line-height: 1.5;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.news-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    height: 100px;
+    font-weight: bold;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.news-more-link {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #ee3824;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.news-more-link:hover {
+    background-color: #d32f2f;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.donation-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.donation-notification.show {
+    transform: translateX(0);
+}
+
+.donation-notification span {
+    color: #007bff;
+    font-size: 16px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.donate-button {
+    background-color: transparent;
+    border: 1px solid #007bff;
+    border-radius: 20px;
+    color: #007bff;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.donate-button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+
+.donation-suggestion {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow: hidden;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.donation-suggestion.show {
+    transform: translateX(0);
+}
+
+.donation-content {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.heart-icon {
+    margin-right: 10px;
+    font-size: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.donation-actions {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #e0e0e0;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.action-button {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.action-button:hover {
+    background-color: #f0f0f0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+@media only screen and (min-width: 0) and (max-width: 450px) {
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    .content {
+        position: relative;
+        text-align: center;
+        animation: fadeIn 1.5s ease-in-out;
+        padding: 10px;
+    }
+    .content-img img {
+        width: 100%;
+        height: 450px; 
+        animation: zoomIn 1.5s ease-in-out;
+    }
+    .content-text {
+        position: relative;
+        left: 50%;
+        color: #ffffff;
+        padding: 15px;
+        border-radius: 5px;
+        width: 90%;
+        margin: 10px auto;
+        animation: fadeInUp 1.5s ease-in-out;
+        margin-top: -200px;
+    }
+    .content-text h1 {
+        font-size: 1.2em;
+        margin: 10px 0;
+        text-align: start;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .content-text p {
+        font-size: 1em;
+        font-weight: bold;
+        margin: 10px 0;
+        text-align: start;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .content-text a {
+        display: block;
+        margin: 10px auto;
+        text-align: center;
+        transition: 0.3s;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .content-text a:hover {
+        background-color: #000000;
+        color: #fff;
+    }
+    .btnDonate {
+        width: 160px;
+        background-color: #fff;
+        color: #f00;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        animation: fadeIn 1.5s ease-in-out;
+        position: fixed;
+        left: 26%;
+        transform: translateX(-50%);
+    }
+    .content-body {
+        background-color: #e6e8e5;
+        
+        padding: 20px;
+        border-radius: 5px;
+        text-align: left;
+        animation: fadeIn 1.5s ease-in-out;
+        margin-top: 60px;
+    }
+    .content-body h2 {
+        margin-left: 20%;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #333; 
+        width: 58%;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .content-body p {
+        margin-left: 20%;
+        font-size: 1em;
+        margin-bottom: 20px;
+        color: #555;
+        width: 54%;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .learn-more-button {
+        margin-left: 20%;
+        display: inline-block;
+        background-color: #e63946;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .learn-more-button:hover {
+        background-color: #d62839;
+    }
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0px 5px;
+        position: relative;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .container:after {
+        visibility: hidden;
+        display: block;
+        content: "";
+        clear: both;
+        height: 0;
+    }
+    span.button {
+        color: #fff;
+        padding: 10px 12px;
+        transition: 0.2s background-color, 0.2s color;
+        font-family: 'FrutigerPro', sans-serif;
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
+        font-size: 100%;
+        font-weight: bold;
+        border-radius: 0;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    span.button:hover {
+        text-decoration: none;
+        color: #fff;
+        background-color: #000;
+    }
+    span.arrow-link {
+        font-size: 80%;
+        color: #ee3824;
+        position: relative;
+        transition: color 0.2s;
+        padding: 0 10px 0 0;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    span.arrow-link:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        position: absolute;
+        bottom: 3px;
+        transition: border-color 0.2s;
+        right: 3px;
+        border-color: transparent transparent transparent #ee3824;
+        border-width: 3px 0 3px 5px;
+    }
+    .arrow-over-image {
+        position: relative;
+        margin: 20px 0 30px 0;
+        overflow: hidden;
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .arrow-over-image h1, .arrow-over-image h2, .arrow-over-image h3, .arrow-over-image h4, .arrow-over-image h5, .arrow-over-image h6 {
+        color: #fff;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .arrow-over-image p {
+        font-size: 100%;
+        line-height: 120%;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .arrow-over-image p:last-child {
+        margin-bottom: 0;
+    }
+    .arrow-over-image p a.button, .arrow-over-image p span.button {
+        font-size: 100%;
+        margin-top: 8px;
+        background: #fff;
+        color: #ee3824;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .arrow-over-image p a.button:hover, .arrow-over-image p span.button:hover {
+        background: #000;
+        color: #fff;
+    }
+    .arrow-over-image__link {
+        display: block;
+        overflow: hidden;
+        color: inherit;
+        text-decoration: none;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .arrow-over-image__link:hover span.button {
+        background: #000;
+        color: #fff;
+    }
+    .arrow-over-image__text-outer {
+        width: 100%;
+        display: block;
+        position: relative;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .arrow-over-image__text-inner {
+        text-align: left;
+        color: #ffffff;
+        display: table;
+        height: auto;
+        width: 100%;
+        padding: 20px;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .arrow-over-image__text-inner:after {
+        content: '';
+        position: absolute;
+        left: calc(100% - 1px);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 200px 0 200px 70px;
+        border-color: transparent transparent transparent #273a56;
+        z-index: 1;
+        top: 50%;
+        margin-top: -200px;
+    }
+    .arrow-over-image--dark-blue p a.button, .arrow-over-image--dark-blue p span.button {
+        color: #273a56;
+    }
+    .arrow-over-image--dark-blue .arrow-over-image__text-inner {
+        background: none;
+    }
+    .arrow-over-image--dark-blue .arrow-over-image__text-inner:after {
+        border-color: transparent transparent transparent #273a56;
+    }
+    .news {
+        text-align: center;
+        overflow: hidden;
+        padding: 50px 0 0 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #e6e8e5;
+        background-size: cover;
+        position: relative;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -62px;
+        width: 100%;
+        background-image: url("https://www.map.org.uk/templates/default/images/stroke-texture-repeating.svg");
+        background-size: 800px 118px;
+        height: 118px;
+    }
+    a.news-header-link {
+        text-align: center;
+        float: right;
+        background-color: #ee3824;
+        text-decoration: none;
+        color: #fff;
+        padding: 12px 15px;
+        transition: 0.2s background-color, 0.2s color;
+        font-family: 'FrutigerPro', sans-serif;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 100%;
+        font-weight: bold;
+        border-radius: 0;
+        margin-right: 0;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    a.news-header-link:hover {
+        background-color: #000;
+        color: #fff;
+    }
+    .news-header-text h2 {
+        text-align: left;
+        margin-top: 0px;
+        font-family: 'FrutigerPro', sans-serif;
+        font-size: 150%;
+        line-height: 110%;
+        font-weight: 800;
+        color: #ee3824;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        transition: color 0.2s;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-feed {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px; /* Thêm khoảng cách giữa các phần tử */
+        padding: 10px; /* Thêm khoảng đệm xung quanh */
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-item {
+        position: relative;
+        margin-top: 20px; /* Để có khoảng trống cho mũi tên */
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-bottom: 4px solid #b6b6b6;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-item::before {
+        content: '';
+        position: absolute;
+        top: -10px; /* Đặt mũi tên lên trên */
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 0 10px 10px 10px; /* Kích thước mũi tên */
+        border-style: solid;
+        border-color: transparent transparent #fff transparent; /* Màu mũi tên */
+        z-index: 1; /* Đảm bảo mũi tên nằm trên cùng */
+    }
+    .news-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .news-item-link {
+        text-decoration: none;
+        color: #000;
+        transition: color 0.3s ease;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-item-link:hover {
+        color: #ee3824;
+        text-decoration: none;
+    }
+    .news-item-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-item-image:hover {
+        transform: scale(1.05);
+    }
+    .news-item-text {
+        text-align: left;
+        background-color: #fff;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-item-text-inner {
+        text-align: left;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-item-text-inner h6 {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-left: 5px;
+        transition: color 0.3s ease;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-item-text-inner h6:hover {
+        color: #ee3824;
+    }
+    .news-item-text-inner p {
+        margin-top: 20px;
+        font-size: 1em;
+        font-weight: normal;
+        margin-left: 5px;
+        line-height: 1.5;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-more {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        width: 100%;
+        height: 100px;
+        font-weight: bold;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-more-link {
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #ee3824;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-more-link:hover {
+        background-color: #d32f2f;
+        color: #fff;
+        transform: scale(1.1);
+    }
+    .donation-notification {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 10px 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 300px;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease-in-out;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .donation-notification.show {
+        transform: translateX(0);
+    }
+    .donation-notification span {
+        color: #007bff;
+        font-size: 16px;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .donate-button {
+        background-color: transparent;
+        border: 1px solid #007bff;
+        border-radius: 20px;
+        color: #007bff;
+        padding: 5px 15px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .donate-button:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+    .donation-suggestion {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        overflow: hidden;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .donation-suggestion.show {
+        transform: translateX(0);
+    }
+    .donation-content {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .heart-icon {
+        margin-right: 10px;
+        font-size: 20px;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .donation-actions {
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid #e0e0e0;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .action-button {
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .action-button:hover {
+        background-color: #f0f0f0;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes zoomIn {
+        from {
+            transform: scale(0.5);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+}
+@media only screen and (min-width: 0) and (max-width: 360px) {
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+    .content {
+        position: relative;
+        text-align: center;
+        animation: fadeIn 1.5s ease-in-out;
+        padding: 10px;
+    }
+    .content-img img {
+        width: 100%;
+        height: 450px; 
+        animation: zoomIn 1.5s ease-in-out;
+    }
+    .content-text {
+        position: relative;
+        left: 50%;
+        color: #ffffff;
+        padding: 15px;
+        border-radius: 5px;
+        width: 90%;
+        margin: 10px auto;
+        animation: fadeInUp 1.5s ease-in-out;
+        margin-top: -200px;
+    }
+    .content-text h1 {
+        font-size: 1.2em;
+        margin: 10px 0;
+        text-align: start;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .content-text p {
+        font-size: 1em;
+        font-weight: bold;
+        margin: 10px 0;
+        text-align: start;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .content-text a {
+        display: block;
+        margin: 10px auto;
+        text-align: center;
+        transition: 0.3s;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .content-text a:hover {
+        background-color: #000000;
+        color: #fff;
+    }
+    .btnDonate {
+        width: 160px;
+        background-color: #fff;
+        color: #f00;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        animation: fadeIn 1.5s ease-in-out;
+        position: fixed;
+        left: 26%;
+        transform: translateX(-50%);
+    }
+    .content-body {
+        background-color: #e6e8e5;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: left;
+        animation: fadeIn 1.5s ease-in-out;
+        margin-top: -70px;
+    }
+    .content-body h2 {
+        margin-left: 20%;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #333; 
+        width: 58%;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .content-body p {
+        margin-left: 20%;
+        font-size: 1em;
+        margin-bottom: 20px;
+        color: #555;
+        width: 54%;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .learn-more-button {
+        margin-left: 20%;
+        display: inline-block;
+        background-color: #e63946;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .learn-more-button:hover {
+        background-color: #d62839;
+    }
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0px 5px;
+        position: relative;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .container:after {
+        visibility: hidden;
+        display: block;
+        content: "";
+        clear: both;
+        height: 0;
+    }
+    span.button {
+        color: #fff;
+        padding: 10px 12px;
+        transition: 0.2s background-color, 0.2s color;
+        font-family: 'FrutigerPro', sans-serif;
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
+        font-size: 100%;
+        font-weight: bold;
+        border-radius: 0;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    span.button:hover {
+        text-decoration: none;
+        color: #fff;
+        background-color: #000;
+    }
+    span.arrow-link {
+        font-size: 80%;
+        color: #ee3824;
+        position: relative;
+        transition: color 0.2s;
+        padding: 0 10px 0 0;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    span.arrow-link:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        position: absolute;
+        bottom: 3px;
+        transition: border-color 0.2s;
+        right: 3px;
+        border-color: transparent transparent transparent #ee3824;
+        border-width: 3px 0 3px 5px;
+    }
+    .arrow-over-image {
+        position: relative;
+        margin: 20px 0 30px 0;
+        overflow: hidden;
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .arrow-over-image h1, .arrow-over-image h2, .arrow-over-image h3, .arrow-over-image h4, .arrow-over-image h5, .arrow-over-image h6 {
+        color: #fff;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .arrow-over-image p {
+        font-size: 100%;
+        line-height: 120%;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .arrow-over-image p:last-child {
+        margin-bottom: 0;
+    }
+    .arrow-over-image p a.button, .arrow-over-image p span.button {
+        font-size: 100%;
+        margin-top: 8px;
+        background: #fff;
+        color: #ee3824;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .arrow-over-image p a.button:hover, .arrow-over-image p span.button:hover {
+        background: #000;
+        color: #fff;
+    }
+    .arrow-over-image__link {
+        display: block;
+        overflow: hidden;
+        color: inherit;
+        text-decoration: none;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .arrow-over-image__link:hover span.button {
+        background: #000;
+        color: #fff;
+    }
+    .arrow-over-image__text-outer {
+        width: 100%;
+        display: block;
+        position: relative;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .arrow-over-image__text-inner {
+        text-align: left;
+        color: #ffffff;
+        display: table;
+        height: auto;
+        width: 100%;
+        padding: 20px;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .arrow-over-image__text-inner:after {
+        content: '';
+        position: absolute;
+        left: calc(100% - 1px);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 200px 0 200px 70px;
+        border-color: transparent transparent transparent #273a56;
+        z-index: 1;
+        top: 50%;
+        margin-top: -200px;
+    }
+    .arrow-over-image--dark-blue p a.button, .arrow-over-image--dark-blue p span.button {
+        color: #273a56;
+    }
+    .arrow-over-image--dark-blue .arrow-over-image__text-inner {
+        background: none;
+    }
+    .arrow-over-image--dark-blue .arrow-over-image__text-inner:after {
+        border-color: transparent transparent transparent #273a56;
+    }
+    .news {
+        text-align: center;
+        overflow: hidden;
+        padding: 50px 0 0 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #e6e8e5;
+        background-size: cover;
+        position: relative;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -62px;
+        width: 100%;
+        background-image: url("https://www.map.org.uk/templates/default/images/stroke-texture-repeating.svg");
+        background-size: 800px 118px;
+        height: 118px;
+    }
+    a.news-header-link {
+        text-align: center;
+        float: right;
+        background-color: #ee3824;
+        text-decoration: none;
+        color: #fff;
+        padding: 12px 15px;
+        transition: 0.2s background-color, 0.2s color;
+        font-family: 'FrutigerPro', sans-serif;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 100%;
+        font-weight: bold;
+        border-radius: 0;
+        margin-right: 0;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    a.news-header-link:hover {
+        background-color: #000;
+        color: #fff;
+    }
+    .news-header-text h2 {
+        text-align: left;
+        margin-top: 0px;
+        font-family: 'FrutigerPro', sans-serif;
+        font-size: 150%;
+        line-height: 110%;
+        font-weight: 800;
+        color: #ee3824;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        transition: color 0.2s;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-feed {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px; /* Thêm khoảng cách giữa các phần tử */
+        padding: 10px; /* Thêm khoảng đệm xung quanh */
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-item {
+        position: relative;
+        margin-top: 20px; /* Để có khoảng trống cho mũi tên */
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-bottom: 4px solid #b6b6b6;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-item::before {
+        content: '';
+        position: absolute;
+        top: -10px; /* Đặt mũi tên lên trên */
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 0 10px 10px 10px; /* Kích thước mũi tên */
+        border-style: solid;
+        border-color: transparent transparent #fff transparent; /* Màu mũi tên */
+        z-index: 1; /* Đảm bảo mũi tên nằm trên cùng */
+    }
+    .news-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .news-item-link {
+        text-decoration: none;
+        color: #000;
+        transition: color 0.3s ease;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-item-link:hover {
+        color: #ee3824;
+        text-decoration: none;
+    }
+    .news-item-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-item-image:hover {
+        transform: scale(1.05);
+    }
+    .news-item-text {
+        text-align: left;
+        background-color: #fff;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-item-text-inner {
+        text-align: left;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-item-text-inner h6 {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-left: 5px;
+        transition: color 0.3s ease;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-item-text-inner h6:hover {
+        color: #ee3824;
+    }
+    .news-item-text-inner p {
+        margin-top: 20px;
+        font-size: 1em;
+        font-weight: normal;
+        margin-left: 5px;
+        line-height: 1.5;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-more {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        width: 100%;
+        height: 100px;
+        font-weight: bold;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-more-link {
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #ee3824;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .news-more-link:hover {
+        background-color: #d32f2f;
+        color: #fff;
+        transform: scale(1.1);
+    }
+    .donation-notification {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 10px 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 300px;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.5s ease-in-out;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .donation-notification.show {
+        transform: translateX(0);
+    }
+    .donation-notification span {
+        color: #007bff;
+        font-size: 16px;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .donate-button {
+        background-color: transparent;
+        border: 1px solid #007bff;
+        border-radius: 20px;
+        color: #007bff;
+        padding: 5px 15px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .donate-button:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+    .donation-suggestion {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        overflow: hidden;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .donation-suggestion.show {
+        transform: translateX(0);
+    }
+    .donation-content {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .heart-icon {
+        margin-right: 10px;
+        font-size: 20px;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .donation-actions {
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid #e0e0e0;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .action-button {
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .action-button:hover {
+        background-color: #f0f0f0;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes zoomIn {
+        from {
+            transform: scale(0.5);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .content-text {
+        position: relative;
+        left: 50%;
+        color: #ffffff;
+        padding: 15px;
+        border-radius: 5px;
+        width: 90%;
+        margin: 10px auto;
+        animation: fadeInUp 1.5s ease-in-out;
+        margin-top: -200px;
+    }
+    .content-text h1 {
+        font-size: 1.2em;
+        margin: 10px 0;
+        text-align: start;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .content-text p {
+        font-size: 1em;
+        font-weight: bold;
+        margin: 10px 0;
+        text-align: start;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .content-text a {
+        display: block;
+        margin: 10px auto;
+        text-align: center;
+        transition: 0.3s;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    .content-text a:hover {
+        background-color: #000000;
+        color: #fff;
+    }
+}

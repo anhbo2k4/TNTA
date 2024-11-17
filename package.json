@@ -1,0 +1,37 @@
+{
+  "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.3",
+    "@paypal/paypal-js": "^8.1.2",
+    "@pqina/pintura": "^8.89.6",
+    "@types/paypal-checkout-components": "^4.0.8",
+    "@types/paypal-rest-sdk": "^1.7.9",
+    "axios": "^1.7.7",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "cloudinary": "^2.5.1",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.1",
+    "express-session": "^1.18.1",
+    "express-validator": "^7.2.0",
+    "helmet": "^8.0.0",
+    "https": "^1.0.0",
+    "i18n": "^0.15.1",
+    "libphonenumber-js": "^1.11.12",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.11.3",
+    "nodemailer": "^6.9.16",
+    "open": "^10.1.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "paypal-checkout": "^4.0.344",
+    "paypal-rest-sdk": "^1.8.1",
+    "sequelize": "^6.37.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}

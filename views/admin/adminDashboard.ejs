@@ -1,0 +1,463 @@
+<%- include('head') %>
+<body>
+    <main class="hp-bg-color-dark-90 d-flex min-vh-100">
+      <%- include('navbar') %>
+   
+      <div class="hp-main-layout-content">
+        <div class="row mb-32 g-32">
+            <div class="col flex-grow-1 overflow-hidden">
+                <div class="row g-32">
+                    <div class="col-12">
+                        <h1 class="hp-mb-0">Dashboard</h1>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="row g-32">
+                            <div class="col-md-4 col-6">
+                                <div class="card hp-dashboard-feature-card hp-border-color-black-0 hp-border-color-dark-80 hp-cursor-pointer">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-center hp-dashboard-feature-card-icon rounded-3 hp-bg-black-20 hp-bg-dark-80" style="width: 48px; height: 48px;">
+                                            <svg class="hp-text-color-black-bg hp-text-color-dark-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M18.809 6.25h1.36c-.19-.27-.39-.52-.6-.77l-.76.77ZM18.52 4.42c-.25-.21-.5-.41-.77-.6v1.36l.77-.76ZM19.58 5.481l2.95-2.95c.29-.29.29-.77 0-1.06a.754.754 0 0 0-1.06 0l-2.95 2.95c.38.33.73.69 1.06 1.06ZM17.752 3c0-.41-.34-.75-.75-.75-.4 0-.72.32-.74.71.52.25 1.02.53 1.49.86V3ZM21.752 7c0-.41-.34-.75-.75-.75h-.83c.33.47.62.97.86 1.49.4-.02.72-.34.72-.74ZM12.75 14.75h.3c.39 0 .7-.35.7-.78 0-.54-.15-.62-.49-.74l-.51-.18v1.7Z" fill="currentColor"></path>
+                                                <path d="M21.04 7.74c-.01 0-.02.01-.04.01h-4c-.1 0-.19-.02-.29-.06a.782.782 0 0 1-.41-.41.868.868 0 0 1-.05-.28V3c0-.01.01-.02.01-.04C14.96 2.35 13.52 2 12 2 6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10c0-1.52-.35-2.96-.96-4.26Zm-7.29 4.08c.64.22 1.5.69 1.5 2.16 0 1.25-.99 2.28-2.2 2.28h-.3v.25c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-.25h-.08c-1.33 0-2.42-1.12-2.42-2.5 0-.42.34-.76.75-.76s.75.34.75.75c0 .55.41 1 .92 1h.08v-2.22l-1-.35c-.64-.22-1.5-.69-1.5-2.16 0-1.25.99-2.28 2.2-2.28h.3V7.5c0-.41.34-.75.75-.75s.75.34.75.75v.25h.08c1.33 0 2.42 1.12 2.42 2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.55-.41-1-.92-1h-.08v2.22l1 .35Z" fill="currentColor"></path>
+                                                <path d="M10.25 10.03c0 .54.15.62.49.74l.51.18v-1.7h-.3c-.38 0-.7.35-.7.78Z" fill="currentColor"></path>
+                                            </svg>
+                                        </div>
+
+                                        <div class="d-flex mt-12">
+                                            <span class="h4 mb-0 d-block hp-text-color-black-bg hp-text-color-dark-0 fw-medium me-4"> Total Posts </span>
+                                            <div>
+                                                <svg class="hp-text-color-success-1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none">
+                                                    <path fill="currentColor" d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2zm1.06 10.33c0 .41-.34.75-.75.75s-.75-.34-.75-.75V9.31l-7.72 7.72c-.15.15-.34.22-.53.22s-.38-.07-.53-.22a.754.754 0 010-1.06l7.72-7.72h-3.02c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h4.83c.41 0 .75.34.75.75v4.83z"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+
+                                        <span class="d-block mt-12 mb-8 h3"><%= posts.length%></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-6">
+                                <div class="card hp-dashboard-feature-card hp-border-color-black-0 hp-border-color-dark-80 hp-cursor-pointer">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-center hp-dashboard-feature-card-icon rounded-3 hp-bg-black-20 hp-bg-dark-80" style="width: 48px; height: 48px;">
+                                            <svg class="hp-text-color-black-bg hp-text-color-dark-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M10.25 10.03c0 .54.15.62.49.74l.51.18v-1.7h-.3c-.38 0-.7.35-.7.78ZM12.75 14.75h.3c.39 0 .7-.35.7-.78 0-.54-.15-.62-.49-.74l-.51-.18v1.7Z" fill="currentColor"></path>
+                                                <path d="m19.58 5.48-2.05 2.05c-.15.15-.34.22-.53.22s-.38-.07-.53-.22a.754.754 0 0 1 0-1.06l2.05-2.05C16.76 2.92 14.49 2 12 2 6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10c0-2.49-.92-4.76-2.42-6.52Zm-5.83 6.34c.64.23 1.5.69 1.5 2.16 0 1.25-.99 2.28-2.2 2.28h-.3v.25c0 .41-.34.75-.75.75s-.75-.34-.75-.75v-.25h-.08c-1.33 0-2.42-1.12-2.42-2.5 0-.42.34-.76.75-.76s.75.34.75.75c0 .55.41 1 .92 1h.08v-2.22l-1-.35c-.64-.23-1.5-.69-1.5-2.16 0-1.25.99-2.28 2.2-2.28h.3V7.5c0-.41.34-.75.75-.75s.75.34.75.75v.25h.08c1.33 0 2.42 1.12 2.42 2.5 0 .41-.34.75-.75.75s-.75-.34-.75-.75c0-.55-.41-1-.92-1h-.08v2.22l1 .35ZM22.69 1.71a.782.782 0 0 0-.41-.41.868.868 0 0 0-.28-.05h-4c-.41 0-.75.34-.75.75s.34.75.75.75h2.19l-1.67 1.67c.38.33.73.68 1.06 1.06l1.67-1.67V6c0 .41.34.75.75.75s.75-.34.75-.75V2c0-.1-.02-.19-.06-.29Z" fill="currentColor"></path>
+                                            </svg>
+                                        </div>
+
+                                        <div class="d-flex mt-12">
+                                            <span class="h4 mb-0 d-block hp-text-color-black-bg hp-text-color-dark-0 fw-medium me-4"> Total Views </span>
+                                            <div>
+                                                <svg class="hp-text-color-danger-1" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none">
+                                                    <path fill="currentColor" d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2zm1.34 5.53l-7.72 7.72h3.02c.41 0 .75.34.75.75s-.34.75-.75.75H8c-.41 0-.75-.34-.75-.75v-4.83c0-.41.34-.75.75-.75s.75.34.75.75v3.02l7.72-7.72c.15-.15.34-.22.53-.22s.38.07.53.22c.29.29.29.77 0 1.06z"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+
+                              
+                                        <span class="d-block mt-12 mb-8 h3"> <%= totalViews %> </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-6">
+                                <div class="card hp-dashboard-feature-card hp-border-color-black-0 hp-border-color-dark-80 hp-cursor-pointer">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-center hp-dashboard-feature-card-icon rounded-3 hp-bg-black-20 hp-bg-dark-80" style="width: 48px; height: 48px;">
+                                            <svg class="hp-text-color-black-bg hp-text-color-dark-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="m11.94 2.212-2.41 5.61H7.12c-.4 0-.79.03-1.17.11l1-2.4.04-.09.06-.16c.03-.07.05-.13.08-.18 1.16-2.69 2.46-3.53 4.81-2.89ZM18.731 8.09l-.02-.01c-.6-.17-1.21-.26-1.83-.26h-6.26l2.25-5.23.03-.07c.14.05.29.12.44.17l2.21.93c1.23.51 2.09 1.04 2.62 1.68.09.12.17.23.25.36.09.14.16.28.2.43.04.09.07.17.09.26.15.51.16 1.09.02 1.74ZM18.288 9.52c-.45-.13-.92-.2-1.41-.2h-9.76c-.68 0-1.32.13-1.92.39a4.894 4.894 0 0 0-2.96 4.49v1.95c0 .24.02.47.05.71.22 3.18 1.92 4.88 5.1 5.09.23.03.46.05.71.05h7.8c3.7 0 5.65-1.76 5.84-5.26.01-.19.02-.39.02-.59V14.2a4.9 4.9 0 0 0-3.47-4.68Zm-3.79 7.23h-5c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h5c.41 0 .75.34.75.75s-.34.75-.75.75Z" fill="currentColor"></path>
+                                            </svg>
+                                        </div>
+
+                                        <div class="d-flex mt-12">
+                                            <span class="h4 mb-0 d-block hp-text-color-black-bg hp-text-color-dark-0 fw-medium me-4"> Total Donations </span>
+                                            <div></div>
+                                        </div>
+
+                                        <span class="d-block mt-12 mb-8 h3"> <%= totalDonations %>$ </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-6"></div>
+                                <div class="card hp-dashboard-feature-card hp-border-color-black-0 hp-border-color-dark-80 hp-cursor-pointer">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-center hp-dashboard-feature-card-icon rounded-3 hp-bg-black-20 hp-bg-dark-80" style="width: 48px; height: 48px;">
+                                            <svg class="hp-text-color-black-bg hp-text-color-dark-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="m11.94 2.212-2.41 5.61H7.12c-.4 0-.79.03-1.17.11l1-2.4.04-.09.06-.16c.03-.07.05-.13.08-.18 1.16-2.69 2.46-3.53 4.81-2.89ZM18.731 8.09l-.02-.01c-.6-.17-1.21-.26-1.83-.26h-6.26l2.25-5.23.03-.07c.14.05.29.12.44.17l2.21.93c1.23.51 2.09 1.04 2.62 1.68.09.12.17.23.25.36.09.14.16.28.2.43.04.09.07.17.09.26.15.51.16 1.09.02 1.74ZM18.288 9.52c-.45-.13-.92-.2-1.41-.2h-9.76c-.68 0-1.32.13-1.92.39a4.894 4.894 0 0 0-2.96 4.49v1.95c0 .24.02.47.05.71.22 3.18 1.92 4.88 5.1 5.09.23.03.46.05.71.05h7.8c3.7 0 5.65-1.76 5.84-5.26.01-.19.02-.39.02-.59V14.2a4.9 4.9 0 0 0-3.47-4.68Zm-3.79 7.23h-5c-.41 0-.75-.34-.75-.75s.34-.75.75-.75h5c.41 0 .75.34.75.75s-.34.75-.75.75Z" fill="currentColor"></path>
+                                            </svg>
+                                        </div>
+
+                                        <div class="d-flex mt-12">
+                                            <span class="h4 mb-0 d-block hp-text-color-black-bg hp-text-color-dark-0 fw-medium me-4"> Total Donations </span>
+                                            <div></div>
+                                        </div>
+
+                                        <span class="d-block mt-12 mb-8 h3"> <%= totalContacts %> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-12">
+                        <div class="row">
+                            <div class="overflow-hidden col-12 mb-n24">
+                                <div id="dashboard-analytics-views-chart" class="overflow-hidden" style="min-height: 265px;">
+                                <div class="d-flex flex-column align-items-center justify-content-center" style="height: 100%;">
+                                    <% posts.forEach((post) => { %>
+                                        <div class="d-flex align-items-center justify-content-between w-100 mb-2">
+                                            <span class="hp-text-color-black-bg hp-text-color-dark-0"><%= post.title %></span>
+                                            <span class="hp-text-color-black-bg hp-text-color-dark-0"><%= post.views %></span>
+                                        </div>
+                                    <% }) %>
+                                </div>
+                                
+                                </div>
+                            </div>
+
+                    <div class="col-12">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-sm-6 col-12">
+                                <span class="h3 fw-semibold hp-text-color-black-bg hp-text-color-dark-0 d-block mb-0"> History </span>
+                                <p class="hp-p1-body mt-4 mb-0">Transection of last 6 months</p>
+                            </div>
+
+                            <div class="col"></div>
+                        </div>
+
+                        <div class="row mt-24 mx-0">
+                            <div class="hp-bg-black-0 hp-bg-dark-100 border hp-border-color-black-10 hp-border-color-dark-80 p-12 mb-16 col-12 rounded-5">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="mb-16 mb-sm-0 col-sm-6 col-12">
+                                        <div class="row align-items-center">
+                                            <div class="hp-flex-none w-auto pe-0 col">
+                                                <div class="hp-cursor-pointer border hp-border-color-dark-80 me-16" style="border-radius: 15px;">
+                                                    <div class="overflow-hidden m-4 d-flex hp-bg-danger-4" style="min-width: 64px; width: 64px; height: 64px; border-radius: 15px;">
+                                                        <img src="app-assets/img/memoji/user-avatar-5.png" alt="User" height="100%">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="hp-flex-none w-auto ps-0 col">
+                                                <span class="d-block h4 mb-0">Edward Adams</span>
+                                                <span class="d-block hp-p1-body mt-4">Product Designer</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-sm-end text-start col-sm-3 col-6" style="min-height: 50px;">
+                                        <span class="d-block h4 fw-normal mb-0"> $ 7734.32 </span>
+                                        <span class="d-block hp-p1-body mt-4">30432</span>
+                                    </div>
+
+                                    <div class="text-end col-sm-3 col-6" style="min-height: 50px;">
+                                        <span class="h4">23.23%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hp-bg-black-0 hp-bg-dark-100 border hp-border-color-black-10 hp-border-color-dark-80 p-12 mb-16 col-12 rounded-5">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="mb-16 mb-sm-0 col-sm-6 col-12">
+                                        <div class="row align-items-center">
+                                            <div class="hp-flex-none w-auto pe-0 col">
+                                                <div class="hp-cursor-pointer border hp-border-color-dark-80 me-16" style="border-radius: 15px;">
+                                                    <div class="overflow-hidden m-4 d-flex hp-bg-info-4" style="min-width: 64px; width: 64px; height: 64px; border-radius: 15px;">
+                                                        <img src="app-assets/img/memoji/user-avatar-6.png" alt="User" height="100%">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="hp-flex-none w-auto ps-0 col">
+                                                <span class="d-block h4 mb-0">John Doe</span>
+                                                <span class="d-block hp-p1-body mt-4">Product Designer</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-sm-end text-start col-sm-3 col-6" style="min-height: 50px;">
+                                        <span class="d-block h4 fw-normal mb-0"> $ 7614.43 </span>
+                                        <span class="d-block hp-p1-body mt-4">949</span>
+                                    </div>
+
+                                    <div class="text-end col-sm-3 col-6" style="min-height: 50px;">
+                                        <span class="h4">19.03%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hp-bg-black-0 hp-bg-dark-100 border hp-border-color-black-10 hp-border-color-dark-80 p-12 mb-16 col-12 rounded-5">
+                                <div class="row align-items-center justify-content-between">
+                                    <div class="mb-16 mb-sm-0 col-sm-6 col-12">
+                                        <div class="row align-items-center">
+                                            <div class="hp-flex-none w-auto pe-0 col">
+                                                <div class="hp-cursor-pointer border hp-border-color-dark-80 me-16" style="border-radius: 15px;">
+                                                    <div class="overflow-hidden m-4 d-flex hp-bg-warning-4" style="min-width: 64px; width: 64px; height: 64px; border-radius: 15px;">
+                                                        <img src="/app-assets/img/memoji/user-avatar-7.png" alt="User" height="100%">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="hp-flex-none w-auto ps-0 col">
+                                                <span class="d-block h4 mb-0">Fazıl Say</span>
+                                                <span class="d-block hp-p1-body mt-4">Product Designer</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-sm-end text-start col-sm-3 col-6" style="min-height: 50px;">
+                                        <span class="d-block h4 fw-normal mb-0"> $ 6789.19 </span>
+                                        <span class="d-block hp-p1-body mt-4">732</span>
+                                    </div>
+
+                                    <div class="text-end col-sm-3 col-6" style="min-height: 50px;">
+                                        <span class="h4">13.98%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hp-flex-none w-auto hp-dashboard-line px-0 col">
+                <div class="hp-bg-black-40 hp-bg-dark-80 h-100 mx-24" style="width: 1px;"></div>
+            </div>
+
+            <div class="col hp-analytics-col-2">
+                <div class="row g-32"></div>
+
+                    <div class="col-12">
+                        <span class="h3 d-block fw-semibold hp-text-color-black-bg hp-text-color-dark-0 mb-0"> Recent Activities </span>
+                        <span class="hp-p1-body d-block mt-4">05 Dec 2021</span>
+
+                        <div class="row mt-24">
+                            <div class="hp-cursor-pointer hp-transition hp-hover-bg-dark-100 hp-hover-bg-black-10 rounded py-8 mb-16 col-12">
+                                <div class="row align-items-end justify-content-between">
+                                    <div class="col">
+                                        <div class="row align-items-center">
+                                            <div class="hp-flex-none w-auto pe-0 col">
+                                                <div class="me-16 border hp-border-color-black-10 hp-bg-black-0 rounded-3 d-flex align-items-center justify-content-center" style="min-width: 48px; height: 48px;">
+                                                    <img src="https://yoda.hypeople.studio/yoda-admin-template/app-assets/img/dashboard/zendesk-logo.svg" alt="Zendesk">
+                                                </div>
+                                            </div>
+
+                                            <div class="hp-flex-none w-auto ps-0 col">
+                                                <span class="d-block hp-p1-body fw-medium hp-text-color-black-bg hp-text-color-dark-0"> Zendesk </span>
+                                                <span class="d-block hp-caption fw-normal hp-text-color-black-60"> 05 Dec 2021 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="hp-flex-none w-auto col">
+                                        <span class="h5 hp-text-color-black-bg hp-text-color-dark-0"> $ 500.00 </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hp-cursor-pointer hp-transition hp-hover-bg-dark-100 hp-hover-bg-black-10 rounded py-8 mb-16 col-12">
+                                <div class="row align-items-end justify-content-between">
+                                    <div class="col">
+                                        <div class="row align-items-center">
+                                            <div class="hp-flex-none w-auto pe-0 col">
+                                                <div class="me-16 border hp-border-color-black-10 hp-bg-black-0 rounded-3 d-flex align-items-center justify-content-center" style="min-width: 48px; height: 48px;">
+                                                    <img src="https://yoda.hypeople.studio/yoda-admin-template/app-assets/img/dashboard/sales-force-logo.svg" alt="Sales Force">
+                                                </div>
+                                            </div>
+
+                                            <div class="hp-flex-none w-auto ps-0 col">
+                                                <span class="d-block hp-p1-body fw-medium hp-text-color-black-bg hp-text-color-dark-0"> Sales Force </span>
+                                                <span class="d-block hp-caption fw-normal hp-text-color-black-60"> 24 Dec 2021 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="hp-flex-none w-auto col">
+                                        <span class="h5 hp-text-color-black-bg hp-text-color-dark-0"> $ 337.00 </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hp-cursor-pointer hp-transition hp-hover-bg-dark-100 hp-hover-bg-black-10 rounded py-8 mb-16 col-12">
+                                <div class="row align-items-end justify-content-between">
+                                    <div class="col">
+                                        <div class="row align-items-center">
+                                            <div class="hp-flex-none w-auto pe-0 col">
+                                                <div class="me-16 border hp-border-color-black-10 hp-bg-black-0 rounded-3 d-flex align-items-center justify-content-center" style="min-width: 48px; height: 48px;">
+                                                    <img src="https://yoda.hypeople.studio/yoda-admin-template/app-assets/img/dashboard/apple-logo.svg" alt="Apple">
+                                                </div>
+                                            </div>
+
+                                            <div class="hp-flex-none w-auto ps-0 col">
+                                                <span class="d-block hp-p1-body fw-medium hp-text-color-black-bg hp-text-color-dark-0"> Apple </span>
+                                                <span class="d-block hp-caption fw-normal hp-text-color-black-60"> 29 Dec 2021 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="hp-flex-none w-auto col">
+                                        <span class="h5 hp-text-color-black-bg hp-text-color-dark-0"> $ 320.67 </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hp-cursor-pointer hp-transition hp-hover-bg-dark-100 hp-hover-bg-black-10 rounded py-8 mb-16 col-12">
+                                <div class="row align-items-end justify-content-between">
+                                    <div class="col">
+                                        <div class="row align-items-center">
+                                            <div class="hp-flex-none w-auto pe-0 col">
+                                                <div class="me-16 border hp-border-color-black-10 hp-bg-black-0 rounded-3 d-flex align-items-center justify-content-center" style="min-width: 48px; height: 48px;">
+                                                    <img src="https://yoda.hypeople.studio/yoda-admin-template/app-assets/img/dashboard/google-logo.svg" alt="Google Inc">
+                                                </div>
+                                            </div>
+
+                                            <div class="hp-flex-none w-auto ps-0 col">
+                                                <span class="d-block hp-p1-body fw-medium hp-text-color-black-bg hp-text-color-dark-0"> Google Inc </span>
+                                                <span class="d-block hp-caption fw-normal hp-text-color-black-60"> 29 Dec 2021 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="hp-flex-none w-auto col">
+                                        <span class="h5 hp-text-color-black-bg hp-text-color-dark-0"> $ 127.00 </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hp-cursor-pointer hp-transition hp-hover-bg-dark-100 hp-hover-bg-black-10 rounded py-8 mb-16 col-12">
+                                <div class="row align-items-end justify-content-between">
+                                    <div class="col">
+                                        <div class="row align-items-center">
+                                            <div class="hp-flex-none w-auto pe-0 col">
+                                                <div class="me-16 border hp-border-color-black-10 hp-bg-black-0 rounded-3 d-flex align-items-center justify-content-center" style="min-width: 48px; height: 48px;">
+                                                    <img src="https://yoda.hypeople.studio/yoda-admin-template/app-assets/img/dashboard/virgin-logo.svg" alt="Virgin Media">
+                                                </div>
+                                            </div>
+
+                                            <div class="hp-flex-none w-auto ps-0 col">
+                                                <span class="d-block hp-p1-body fw-medium hp-text-color-black-bg hp-text-color-dark-0"> Virgin Media </span>
+                                                <span class="d-block hp-caption fw-normal hp-text-color-black-60"> 29 Dec 2021 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="hp-flex-none w-auto col">
+                                        <span class="h5 hp-text-color-black-bg hp-text-color-dark-0"> $ 28.00 </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <span class="h3 d-block fw-semibold hp-text-color-black-bg hp-text-color-dark-0 mb-0"> Upcoming Payments </span>
+                        <span class="hp-p1-body d-block mt-4">05 Dec 2021</span>
+
+                        <div class="row mt-24">
+                            <div class="hp-cursor-pointer hp-transition hp-hover-bg-dark-100 hp-hover-bg-black-10 rounded py-8 mb-16 col-12">
+                                <div class="row align-items-end justify-content-between">
+                                    <div class="col">
+                                        <div class="row align-items-center">
+                                            <div class="hp-flex-none w-auto pe-0 col">
+                                                <div class="me-16 border hp-border-color-black-10 hp-bg-black-0 rounded-3 d-flex align-items-center justify-content-center" style="min-width: 48px; height: 48px;">
+                                                    <img src="https://yoda.hypeople.studio/yoda-admin-template/app-assets/img/dashboard/zendesk-logo.svg" alt="Zendesk">
+                                                </div>
+                                            </div>
+
+                                            <div class="hp-flex-none w-auto ps-0 col">
+                                                <span class="d-block hp-p1-body fw-medium hp-text-color-black-bg hp-text-color-dark-0"> Zendesk </span>
+                                                <span class="d-block hp-caption fw-normal hp-text-color-black-60"> 05 Dec 2021 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="hp-flex-none w-auto col">
+                                        <span class="h5 hp-text-color-black-bg hp-text-color-dark-0"> $ 500.00 </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hp-cursor-pointer hp-transition hp-hover-bg-dark-100 hp-hover-bg-black-10 rounded py-8 mb-16 col-12">
+                                <div class="row align-items-end justify-content-between">
+                                    <div class="col">
+                                        <div class="row align-items-center">
+                                            <div class="hp-flex-none w-auto pe-0 col">
+                                                <div class="me-16 border hp-border-color-black-10 hp-bg-black-0 rounded-3 d-flex align-items-center justify-content-center" style="min-width: 48px; height: 48px;">
+                                                    <img src="https://yoda.hypeople.studio/yoda-admin-template/app-assets/img/dashboard/sales-force-logo.svg" alt="Sales Force">
+                                                </div>
+                                            </div>
+
+                                            <div class="hp-flex-none w-auto ps-0 col">
+                                                <span class="d-block hp-p1-body fw-medium hp-text-color-black-bg hp-text-color-dark-0"> Sales Force </span>
+                                                <span class="d-block hp-caption fw-normal hp-text-color-black-60"> 24 Dec 2021 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="hp-flex-none w-auto col">
+                                        <span class="h5 hp-text-color-black-bg hp-text-color-dark-0"> $ 337.00 </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hp-cursor-pointer hp-transition hp-hover-bg-dark-100 hp-hover-bg-black-10 rounded py-8 mb-16 col-12">
+                                <div class="row align-items-end justify-content-between">
+                                    <div class="col">
+                                        <div class="row align-items-center">
+                                            <div class="hp-flex-none w-auto pe-0 col">
+                                                <div class="me-16 border hp-border-color-black-10 hp-bg-black-0 rounded-3 d-flex align-items-center justify-content-center" style="min-width: 48px; height: 48px;">
+                                                    <img src="https://yoda.hypeople.studio/yoda-admin-template/app-assets/img/dashboard/virgin-logo.svg" alt="Virgin Media">
+                                                </div>
+                                            </div>
+
+                                            <div class="hp-flex-none w-auto ps-0 col">
+                                                <span class="d-block hp-p1-body fw-medium hp-text-color-black-bg hp-text-color-dark-0"> Virgin Media </span>
+                                                <span class="d-block hp-caption fw-normal hp-text-color-black-60"> 29 Dec 2021 </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="hp-flex-none w-auto col">
+                                        <span class="h5 hp-text-color-black-bg hp-text-color-dark-0"> $ 28.00 </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</main>
+<!-- Plugin -->
+<script src="app-assets/js/plugin/jquery.min.js"></script>
+<script src="app-assets/js/plugin/bootstrap.bundle.min.js"></script>
+<script src="app-assets/js/plugin/swiper-bundle.min.js"></script>
+<script src="app-assets/js/plugin/jquery.mask.min.js"></script>
+<script src="app-assets/js/plugin/autocomplete.min.js"></script>
+<script src="app-assets/js/plugin/moment.min.js"></script>
+
+<!-- Layouts -->
+<script src="app-assets/js/layouts/header-search.js"></script>
+<script src="app-assets/js/layouts/sider.js"></script>
+<script src="app-assets/js/components/input-number.js"></script>
+
+<!-- Base -->
+<script src="app-assets/js/base/index.js"></script>
+<!-- Customizer -->
+<script src="app-assets/js/customizer.js"></script>
+
+<!-- Charts -->
+<script src="app-assets/js/plugin/apexcharts.min.js"></script>
+<script src="app-assets/js/charts/apex-chart.js"></script>
+
+<!-- Cards -->
+<script src="app-assets/js/cards/card-analytic.js"></script>
+<script src="app-assets/js/cards/card-advance.js"></script>
+<script src="app-assets/js/cards/card-statistic.js"></script>
+
+<!-- Custom -->
+<script src="assets/js/main.js"></script>
+
+</body>

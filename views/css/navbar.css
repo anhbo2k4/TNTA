@@ -1,0 +1,801 @@
+.navbar-container{
+   width: 100%;
+   height: 14vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+   background-color: #fff;
+   top: 0;
+   z-index: 1000;
+   overflow-x: hidden; /* Thêm dòng này để không cho cuộn sang ngang */
+   overflow-y: hidden; /* Ẩn thanh cuộn dọc */
+}
+.navbar-logo{
+    margin-bottom: 30px;
+}
+#donateDialog-ok {
+    display: none; /* Ẩn dialog mặc định */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    padding: 30px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 1000;
+}
+#overlay {
+    display: none; /* Ẩn overlay mặc định */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+}
+#closeDialog{
+    color: #ff0000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#closeDialog:hover {
+    background-color: #ff6347;
+    transform: scale(1.1);
+}
+.navbar-logo img{
+    width: 250px;
+    height: 250px;
+    margin-top: 45px;
+}
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+.navbar-item{
+    padding: 10px;
+    margin: 0 5px;
+}
+.navbar-item-link{
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+.navbar-item-link a{
+    font-size: 15px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.5s ease, border-radius 0.5s ease;
+}
+.navbar-item-link a:hover{
+    color: #fd0707;
+    border-radius: 3px;
+}
+.navbar-button-donate{
+    margin-left: -50px;
+    padding: 10px 20px;
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.navbar-button-donate a{
+    color: #fff;
+    text-decoration: none;
+    
+}
+.navbar-button-donate:hover{
+    background-color: #ff6347;
+    transform: scale(1.1);
+}
+
+
+
+/* Donate Dialog */
+.donate-dialog {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow-x: hidden; /* Thêm dòng này để không cho cuộn sang ngang */
+}
+.donate-dialog-container{
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    justify-content: center;
+}
+.donate-dialog-content {
+    background-color: #fefefe;
+    margin-left: 10px;
+    padding: 20px;
+    margin-top: 170px;
+    border: 1px solid #888;
+    width: 90vw;
+    max-width: 450px;
+    height: 60vh;
+    border-radius: 10px;
+    overflow: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.donate-dialog-content::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+ .close-button {
+    position: absolute;
+    top: 18%;
+    left: 60%;
+    color: #aaa;
+    float: right;
+    font-size: 58px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #ff0000;
+    transition: color 0.3s;
+}
+
+.nav-button:hover {
+    color: #ff0000;
+}
+
+.nav-button:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+.donation-step {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    display: block;
+    text-align: center;
+    height: auto;
+}
+.step-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.step-title {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.step-indicator {
+    position: relative;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.step-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: inline-block;
+    margin: 0 6px;
+    transition: background-color 0.3s ease;
+}
+
+.step-circle.active {
+    background-color: #ff0909;
+}
+
+.back-button {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.back-button:hover {
+    background: #e0e0e0;
+}
+
+.step-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+label.other-amount{
+    position: relative;
+    display: block;
+    width: 350px;
+    margin: 0 auto;
+    text-align: right;
+    font-size: 18px;
+}
+label .form-input {
+    width: 100%;
+    padding: 12px 16px;
+    padding-left: 30px;
+    border: 1px solid #5e5858;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+label .form-input:focus{
+    outline: none;
+}
+
+label span{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    
+}
+
+
+.continue-button {
+    width: 50%;
+    padding: 10px 20px;
+    background: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.continue-button:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: scale(1.05);
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.donation-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.donation-options label {
+    flex: 1 1 45%;
+    max-width: 180px;
+    text-align: center;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: background-color 0.3s;
+    font-size: 18px;
+}
+
+.donation-options label:hover {
+    background-color: #d0d0d0;
+}
+.donation-options label:active {
+    transform: scale(0.95);
+}
+.donation-options label:focus {
+    outline: none;
+}
+.donation-options input[type="radio"]:checked + label {
+    background-color: #007bff;
+    color: #fff;
+}
+.donate-content {
+    margin-top: 100px;
+    position: relative;
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.donate-content p {
+    font-size: 16px;
+    color: #333;
+}
+button.next-next{
+    margin: 30px 0 0 0;
+    width: 180px;
+    height: 45px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+button.next-next:hover{
+    background-color: #ff0000;
+    color: #fff;
+    transform: scale(1.05);
+}
+.donate-dialog-content .faq {
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: rgba(249, 249, 249, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.donate-dialog-content .faq h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.donate-dialog-content .faq-item {
+    margin-bottom: 20px;
+}
+
+.donate-dialog-content .faq-item h4 {
+    font-size: 20px;
+    color: #007bff;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.donate-dialog-content .faq-item h4:hover {
+    color: #0056b3;
+}
+
+.donate-dialog-content .faq-item p {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+    display: none;
+}
+
+.donate-dialog-content .faq-item.active p {
+    display: block;
+}
+
+.donate-dialog-content .faq-toggle {
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+}
+.faq-question {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+.faq-answer {
+    padding: 10px;
+    background-color: #ffffff;
+    border-top: 1px solid #ccc;
+}
+.donate-dialog-content #paypal-button-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.donate-dialog-content img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+}
+/* CSS cho form sử dụng các class từ HTML */
+.donate-dialog-content .personal-info {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+}
+.donate-dialog-content .personal-info.active {
+    display: flex;
+
+}
+
+.donate-dialog-content .personal-info input[type="text"],
+.donate-dialog-content .personal-info input[type="email"],
+.donate-dialog-content .personal-info input[type="checkbox"],
+.donate-dialog-content .personal-info label {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.donate-dialog-content .personal-info input[type="text"]:focus,
+.donate-dialog-content .personal-info input[type="email"]:focus,
+.donate-dialog-content .personal-info input[type="checkbox"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.donate-dialog-content .personal-info button {
+    margin: 30px 30px 0 0;
+    margin-left: 100px;
+    width: 180px;
+    height: 45px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.donate-dialog-content .personal-info button:hover {
+    background-color: #ff0000;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.error-message{
+    color: red;
+    font-size: 14px;
+    text-align: left;
+}   
+img.helper-payment{
+    position: fixed;
+    width: 450px;
+    height: 60vh;
+    top: 50%;
+    left: 26%;
+    transform: translate(-50%, -50%);  
+    border-radius: 10px;
+   margin-top: -15px;
+   outline: 1px solid #ccc;
+}
+
+
+strong.faq-question{
+    font-size: 18px;
+    color: #333;
+    font-weight: bolder;
+}
+p.faq-answer{
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin-top: 10px;
+    font-weight: 400;
+}
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: none; /* Ẩn nút khi không cần thiết */
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.back-to-top:hover {
+    background-color: #f0f0f0;
+    color: #222;
+    transform: scale(1.1);
+}
+.container-btn {
+   display: none;
+    cursor: pointer;
+    color: #e20303;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #ff0000;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+.navbar-mobile {
+    display: none;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 100vh;
+    overflow-x: hidden; /* Thêm dòng này để không cho cuộn sang ngang */
+}
+
+.navbar-mobile .search-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.navbar-mobile .navbar-item {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.navbar-mobile .navbar-item-link {
+    width: 100%;
+}
+
+.navbar-mobile .nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.navbar-mobile .nav-link:hover {
+    background-color: #555;
+}
+
+@media only screen and (min-width: 1301px) {
+    .navbar-mobile {
+        display: none; 
+    }
+    .close-button {
+        position: absolute;
+        top: 18%;
+        left: 65%;
+        color: #aaa;
+        float: right;
+        font-size: 58px;
+        font-weight: bold;
+    }
+}
+@media  only screen and (min-width: 0) and  (max-width: 1500px) {
+    .container-btn{
+        display: none;
+    }
+    .navbar{
+        display: flex;
+    }
+    .navbar-mobile{
+        display: none;
+        position: fixed;
+        width: 1000px;
+        overflow-x: hidden; /* Thêm dòng này để không cho cuộn sang ngang */
+    }
+}
+@media  only screen and (min-width: 0) and  (max-width: 1000px) {
+    .container-btn{
+        display: inline-block;
+        position: fixed;
+        right: 10px;
+        z-index: 1;
+    }
+    
+    .navbar-container{
+        width: 100%;
+        height: 14vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        background-color: #fff;
+        top: 0;
+        z-index: 1000;
+        overflow-x: hidden; /* Thêm dòng này để không cho cuộn sang ngang */
+     }
+     .navbar-logo{
+         display: none;
+     }
+     .navbar-logo img{
+         width: 250px;
+         height: 250px;
+     }
+     .navbar{
+         display: none;
+         justify-content: center;
+         align-items: center;
+         width: 60%;
+     }
+     .navbar-item{
+         padding: 10px;
+         margin: 0 5px;
+     }
+     .navbar-item-link{
+         padding: 10px;
+         transition: background-color 0.3s ease;
+     }
+     .navbar-item-link a{
+         color: #000;
+         text-decoration: none;
+         font-weight: bold;
+         transition: color 0.5s ease, border-radius 0.5s ease;
+     }
+     .navbar-button-donate{
+        position: fixed;
+        right: 60px;
+     }
+}
+@media only screen and (min-width: 0) and  (max-width: 768px) {
+    .container-btn{
+        display: inline-block;
+        margin-left: 600px;
+    }
+    .navbar-mobile{
+        display: none;
+        position: fixed;
+        width: 1000px;
+        overflow-x: hidden; /* Thêm dòng này để không cho cuộn sang ngang */
+    }
+    .navbar-mobile .navbar-item{
+        width: 100%;
+    }
+    .navbar-mobile .nav-link{
+        color: #fff;
+    }
+    .close-button {
+        position: absolute;
+        top: 18%;
+        left: 67%;
+        color: #aaa;
+        float: right;
+        font-size: 58px;
+        font-weight: bold;
+    }
+    .navbar-button-donate{
+        position: fixed;
+        right: 60px;
+    }
+}
+@media only screen and (min-width: 0) and  (max-width: 490px) {
+    .container-btn{
+        margin-left: 500px;
+    }
+    .navbar{
+        height: 10vh;
+    }
+  
+    .navbar-button-donate a{
+        font-size: 14px;
+        text-align: center;
+    }
+    .close-button {
+        position: absolute;
+        top: 18%;
+        left: 85%;
+        color: #aaa;
+        float: right;
+        font-size: 58px;
+        font-weight: bold;
+    }
+    label.other-amount{
+        position: relative;
+        display: block;
+        width: 280px;
+            margin: 0 auto;
+            text-align: right;
+        font-size: 18px;
+    }
+    label .form-input {
+        width: 100%;
+        padding: 12px 16px;
+        padding-left: 30px;
+        border: 1px solid #5e5858;
+        font-size: 24px;
+        font-weight: bold;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: border 0.3s ease, box-shadow 0.3s ease;
+    }
+}
+@media only screen and (min-width: 0) and  (max-width: 400px) {
+    label.other-amount{
+        width: 200px;
+    }
+    label .form-input {
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 0) and  (max-width: 1600px) {
+    .navbar{
+        font-size: 14px;
+        padding: 0;
+    }
+    .navbar-item{
+        padding: 0;
+       
+    }
+    .navbar-item-link{
+        padding: 0;
+    }
+    
+}
+@media only screen and (min-width: 0)and(max-width: 1300px) {
+    .navbar{
+        display: none;
+    }
+    .container-btn{
+        display: inline-block;
+        position: fixed;
+        right: 10px;
+        z-index: 1;
+        margin-left: 500px;
+    }
+    .navbar-mobile{
+        display: none;
+    }
+    .navbar-button-donate{
+        position: fixed;
+        right: 60px;
+    }
+}
+
+

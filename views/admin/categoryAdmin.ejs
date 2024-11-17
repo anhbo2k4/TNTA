@@ -1,0 +1,55 @@
+<%- include('head') %>
+<body id="top">
+
+ <main class="hp-bg-color-dark-90 d-flex min-vh-100">
+   <%- include('navbar') %>
+   <div class="hp-main-layout-content">
+      <div class="row mb-32 g-32">
+         <div class="col flex-grow-1 overflow-hidden">
+            <div class="row g-32">
+               <div class="col-12">
+                 
+                  <div class="hp-border-color-black-0 hp-border-color-dark-80 hp-bg-black-20 hp-bg-dark-80 hp-rounded-12">
+                     <div class="card-body">
+                        <div class="table-responsive">
+                           <table class="table table-striped">
+                              <thead>
+                                 <tr>
+                                    <th class="hp-text-color-black-bg hp-text-color-dark-0">STT</th>
+                                    <th class="hp-text-color-black-bg hp-text-color-dark-0">Image</th>
+                                    <th class="hp-text-color-black-bg hp-text-color-dark-0">Name</th>
+                                    <th class="hp-text-color-black-bg hp-text-color-dark-0">Description</th>
+                                    <th class="hp-text-color-black-bg hp-text-color-dark-0">Actions</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <% categories.forEach((category, index) => { %>
+                                    <tr>
+                                       <td class="hp-text-color-black-bg hp-text-color-dark-0"><%= index + 1 %></td>
+                                       <td><img src="<%= category.imageUrl %>" alt="<%= category.name %>" class="img-thumbnail" style="width: 50px; height: 50px;"></td>
+                                       <td class="hp-text-color-black-bg hp-text-color-dark-0"><%= category.name %></td>
+                                       <td class="hp-text-color-black-bg hp-text-color-dark-0"><%= category.description %></td>
+                                       <td class="hp-text-color-black-bg hp-text-color-dark-0">
+                                          <a href="/category/edit/<%= category.id %>" class="btn btn-primary">Edit</a>
+                                          <a href="/category/delete/<%= category.id %>" class="btn btn-danger">Delete</a>
+                                       </td>
+                                    </tr>
+                                 <% }); %>
+                              </tbody>
+                           </table>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="hp-mt-32">
+                     <a href="/admin/upCategory" class="btn btn-primary">Create New Category</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+
+
+</body>
+</html>

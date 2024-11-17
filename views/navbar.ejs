@@ -1,0 +1,668 @@
+<div id="overlay"></div>
+<div id="donateDialog-ok">
+    <h2>Ủng hộ chúng tôi</h2>
+    <p>Chúng tôi rất cảm kích nếu bạn có thể ủng hộ để giúp chúng tôi phát triển hơn nữa.</p>
+    <a href="/donate" id="closeDialog" onclick="closeDialog()">DONATE NOW</a>
+    <button id="closeDialog" onclick="closeDialog()">Đóng</button>
+</div>
+
+
+<div class="donation-notification" id="donation-notification" style="display: none;">
+    <span id="donation-message"></span>
+    <button class="donate-button">Donate</button>
+</div>
+<div class="donation-suggestion" id="donation-suggestion" style="display: none;">
+    <div class="donation-content">
+        <span class="heart-icon">❤️</span>
+        <span></span>
+    </div>
+    <div class="donation-actions">
+        <button class="action-button">I'm ready</button>
+        <button class="action-button">Not today</button>
+    </div>
+</div>
+<div class="navbar-container">
+    <div class="container-btn" onclick="myFunction(this); toggleMenu()" id="menu-toggle">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <script>
+        function myFunction() {
+            var menuToggle = document.getElementById('menu-toggle');
+            menuToggle.classList.toggle("change");
+        }
+    </script>
+    <script>
+         window.onload = function() {
+            if (!sessionStorage.getItem('dialogShown')) {
+                document.getElementById('overlay').style.display = 'block';
+                document.getElementById('donateDialog-ok').style.display = 'block';
+                sessionStorage.setItem('dialogShown', 'true');
+            }
+        };
+
+        // Hàm để đóng dialog
+        function closeDialog() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('donateDialog-ok').style.display = 'none';
+        }
+        function toggleMenu() {
+            var navbar = document.querySelector('.navbar-mobile');
+            if (navbar.style.display === 'none' || navbar.style.display === '') {
+                navbar.style.display = 'flex';
+                document.addEventListener('click', closeMenuOnClickOutside);
+            } else {
+                navbar.style.display = 'none';
+                document.removeEventListener('click', closeMenuOnClickOutside);
+            }
+        }
+
+        function closeMenuOnClickOutside(event) {
+            var navbar = document.querySelector('.navbar-mobile');
+            var isClickInside = navbar.contains(event.target) || event.target.closest('.container-btn');
+            if (!isClickInside) {
+                navbar.style.display = 'none';
+                document.removeEventListener('click', closeMenuOnClickOutside);
+            }
+        }
+    </script>
+    <div class="navbar-logo">
+        <a href="/">
+            <img src="/logo.png" alt="logo" >
+        </a>
+    </div>
+    <div class="navbar">
+        <div class="navbar-item">
+            <div class="navbar-item-link">
+                <a href="/" class="nav-link" onclick="highlightLink(this)">HOME</a>
+            </div>
+        </div>
+        <div class="navbar-item">
+            <div class="navbar-item-link">
+                <a href="/the-issues" class="nav-link" onclick="highlightLink(this)">THE ISSUES</a>
+            </div>
+        </div>
+        <div class="navbar-item">
+            <div class="navbar-item-link">
+                <a href="/we-will-do" class="nav-link" onclick="highlightLink(this)">WE WILL DO</a>
+            </div>
+        </div>
+        <div class="navbar-item">
+            <div class="navbar-item-link">
+                <a href="/about" class="nav-link" onclick="highlightLink(this)">ABOUT HA</a>
+            </div>
+        </div>
+        <div class="navbar-item">
+            <div class="navbar-item-link">
+                <a href="/news" class="nav-link" onclick="highlightLink(this)">NEWS</a>
+            </div>
+        </div>
+        <div class="navbar-item">
+            <div class="navbar-item-link">
+                <a href="/contact" class="nav-link" onclick="highlightLink(this)">CONTACT US</a>
+            </div>
+        </div>
+        <div class="navbar-item">
+            <div class="navbar-item-link">
+                <a href="/donate" class="nav-link" onclick="highlightLink(this)">BECOME A HELPER</a>
+            </div>
+        </div>
+    </div>
+    <div class="navbar-mobile">
+        <div class="container-btn" onclick="myFunction(this); toggleMenu()" id="menu-toggle">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+        </div>
+        <div class="navbar-item">
+            <div class="navbar-item-link">
+                <a href="/" class="nav-link" onclick="highlightLink(this)">HOME</a>
+            </div>
+        </div>
+        <div class="navbar-item">
+            <div class="navbar-item-link">
+                <a href="/the-issues" class="nav-link" onclick="highlightLink(this)">THE ISSUES</a>
+            </div>
+        </div>
+        <div class="navbar-item">
+            <div class="navbar-item-link">
+                <a href="/we-will-do" class="nav-link" onclick="highlightLink(this)">WE WILL DO</a>
+            </div>
+        </div>
+        <div class="navbar-item">
+            <div class="navbar-item-link">
+                <a href="/about" class="nav-link" onclick="highlightLink(this)">ABOUT HA</a>
+            </div>
+        </div>
+        <div class="navbar-item">
+            <div class="navbar-item-link">
+                <a href="/news" class="nav-link" onclick="highlightLink(this)">NEWS</a>
+            </div>
+        </div>
+        <div class="navbar-item">
+            <div class="navbar-item-link">
+                <a href="/contact" class="nav-link" onclick="highlightLink(this)">CONTACT US</a>
+            </div>
+        </div>
+        <div class="navbar-item">
+            <div class="navbar-item-link">
+                <a href="/donate" class="nav-link" onclick="highlightLink(this)">BECOME A HELPER</a>
+            </div>
+        </div>
+    </div>
+    <div class="navbar-button-donate">
+        <a href="#donate_now" id="donateButton" class="nav-link" onclick="highlightLink(this)">DONATE</a>
+    </div>
+</div>
+
+<script>
+    function highlightLink(link) {
+        document.querySelectorAll('.nav-link').forEach(function(el) {
+            el.style.color = ''; // Reset màu cho tất cả các liên kết
+            el.style.backgroundColor = ''; // Reset background cho tất cả các liên kết
+        });
+        link.style.color = 'red'; // Đổi màu chữ của liên kết được nhấn
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentPath = window.location.pathname;
+        document.querySelectorAll('.nav-link').forEach(function(link) {
+            if (link.getAttribute('href') === currentPath) {
+                link.style.color = 'red'; // Đổi màu chữ của liên kết hiện tại
+                
+            }
+        });
+
+        // Check if the URL contains the hash #donate_now
+        if (window.location.hash === '#donate_now') {
+            document.getElementById('donateDialog').style.display = 'block';
+        }
+    });
+    window.onscroll = function() {
+    const backToTopButton = document.getElementById("backToTop");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopButton.style.display = "block";
+    } else {
+        backToTopButton.style.display = "none";
+    }
+};
+
+// Cuộn lên đầu trang khi nhấn nút
+document.getElementById("backToTop").onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+</script>
+
+<div id="donateDialog" class="donate-dialog" style="display: none;">
+    <div class="donate-dialog-container">
+
+        <div class="donate-dialog-content">
+            <span class="step-indicator">
+                <span class="step-circle active"></span>
+                <span class="step-circle"></span>
+                <span class="step-circle"></span>
+            </span>
+            <div class="donation-step">
+                <div class="step-header">
+                    <button class="nav-button prev">&larr;</button>
+                    <h2 class="step-title">Choose amount</h2> <!-- Đổi thành thẻ h2 -->
+                    <button class="nav-button next">&rarr;</button>
+                </div>
+                <div class="step choose-amount">
+                    <div class="donation-type"></div>
+                    <div class="donation-options" id="paypalform">
+                        <label><input type="radio" class="amount" name="amount" id="amount5" value="5">$5</label>
+                        <label><input type="radio" class="amount" name="amount" id="amount10" value="10">$10</label>
+                        <label><input type="radio" class="amount" name="amount" id="amount30" value="30">$30</label>
+                        <label><input type="radio" class="amount" name="amount" id="amount50" checked value="50">$50</label>
+                        <label><input type="radio" class="amount" name="amount" id="amount100" value="100">$100</label>
+                        <label><input type="radio" class="amount" name="amount" id="amount250" value="250">$250</label>
+                    </div>
+                    <label class="other-amount">
+                        <input type="text" class="form-input" name="amount" id="amount" value="" min="0.01" step="0.01" onfocus="uncheckRadios()" placeholder="Other amount">
+                        <span>$</span>
+                    </label>
+                    <span class="amount-error" style="color: red;"></span> <!-- Thêm phần tử để hiển thị lỗi -->
+                    <button type="button" class="next-next">Next</button>
+                </div>
+    <div class="step personal-info">
+        <input type="text" name="firstName" id="firstName" placeholder="First Name">
+        <span class="error-message" id="firstNameError"></span> <!-- Thêm phần tử để hiển thị lỗi -->
+        
+        <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+        <span class="error-message" id="lastNameError"></span> <!-- Thêm phần tử để hiển thị lỗi -->
+        
+        <input type="email" name="email" id="email" placeholder="Email">
+        <span class="error-message" id="emailError"></span> <!-- Thêm phần tử để hiển thị lỗi -->
+        
+        <button type="button" class="next">Next</button>
+    </div>
+                <div class="step payment">
+                    <h3>Support with</h3>
+                    <h2 class="selected-amount"></h2>
+                    <div id="paypal-button-container"></div>
+                    <img src="https://res.cloudinary.com/dj0ipxidd/image/upload/v1730399123/b43i5i7zesnpzwiu3xwj.jpg" alt="">
+                </div>
+            </div>
+          
+        </div>
+
+    </div>
+    <span class="close-button">&times;</span>
+</div>
+<!-- AbrFfdBjZzH9_uWC7e9Z1YeIi1_EFZf6oDiAKdmIKEqfSyeruxlgHE6jGo3TUieh3FwjF4zOkBK_97e8 -->
+<script src="https://www.paypal.com/sdk/js?client-id=Aaei0EIxMRev1Tzfn8Hg2XFXXINuB-6hTdlIOOJo07yTfbh5PqSWhdLKimNTYPgoiI9Ht63JHEhT-3VO&currency=USD"></script>
+<!-- <script src="https://www.paypal.com/sdk/js?client-id=AbrFfdBjZzH9_uWC7e9Z1YeIi1_EFZf6oDiAKdmIKEqfSyeruxlgHE6jGo3TUieh3FwjF4zOkBK_97e8&currency=USD"></script> -->
+<script>
+
+    function uncheckRadios() {
+        document.querySelectorAll('input[name="amount"][type="radio"]').forEach(radio => {
+            radio.checked = false;
+        });
+    }
+
+    function updateAmountInput() {
+        const checkedRadio = document.querySelector('input[name="amount"]:checked');
+        if (checkedRadio) {
+            document.querySelector('#amount').value = checkedRadio.value;
+        }
+    }
+
+    document.querySelectorAll('input[name="amount"][type="radio"]').forEach(radio => {
+        radio.addEventListener('change', updateAmountInput);
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        updateAmountInput(); // Set initial value based on checked radio button
+
+        const steps = document.querySelectorAll('.step');
+        const circles = document.querySelectorAll('.step-circle');
+        const stepTitles = ["Choose amount", "Personal information", "Payment"];
+        const stepTitleElement = document.querySelector('.step-title');
+        let currentStep = 0;
+    
+        function showStep(step) {
+            steps.forEach((s, index) => {
+                s.classList.toggle('active', index === step);
+            });
+            circles.forEach((c, index) => {
+                c.classList.toggle('active', index === step);
+            });
+            stepTitleElement.textContent = stepTitles[step];
+            updateNavButtons();
+        }
+    
+        function updateNavButtons() {
+            document.querySelectorAll('.prev').forEach(button => {
+                button.disabled = currentStep === 0;
+            });
+            document.querySelectorAll('.next').forEach(button => {
+                button.disabled = currentStep === steps.length - 1;
+            });
+            document.querySelectorAll('.next-next').forEach(button => {
+                button.disabled = currentStep === steps.length - 1;
+            });
+        }
+    
+        showStep(currentStep);
+    
+        document.querySelectorAll('.prev').forEach(button => {
+            button.addEventListener('click', function() {
+                if (currentStep > 0) {
+                    currentStep--;
+                    showStep(currentStep);
+                }
+            });
+        });
+    
+        document.querySelectorAll('.next').forEach(button => {
+    button.addEventListener('click', function() {
+        if (currentStep === 0) {
+            const selectedAmount = document.querySelector('#amount').value || document.querySelector('input[name="amount"]:checked');
+            if (selectedAmount) {
+                if (parseFloat(selectedAmount.value || selectedAmount) < 0.1) {
+                    document.querySelector('.amount-error').textContent = 'Please enter an amount greater than or equal to $0.1.'; // Hiển thị lỗi
+                } else {
+                    currentStep++;
+                    showStep(currentStep);
+                    document.querySelector('.selected-amount').textContent = `$${selectedAmount.value || selectedAmount}`; // Hiển thị số tiền đã chọn
+                }
+            } else {
+                document.querySelector('.amount-error').textContent = 'Please select an amount to proceed.'; // Hiển thị lỗi
+            }
+        } else if (currentStep === 1) {
+            const firstName = document.querySelector('input[placeholder="First Name"]').value.trim();
+            const lastName = document.querySelector('input[placeholder="Last Name"]').value.trim();
+            const email = document.querySelector('input[placeholder="Email"]').value.trim();
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+            // Xóa thông báo lỗi cũ
+            document.getElementById('firstNameError').textContent = '';
+            document.getElementById('lastNameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+
+            let isValid = true;
+
+            if (!firstName) {
+                document.getElementById('firstNameError').textContent = 'Please enter your first name.';
+                isValid = false;
+            }
+            if (!lastName) {
+                document.getElementById('lastNameError').textContent = 'Please enter your last name.';
+                isValid = false;
+            }
+            if (!email || !emailPattern.test(email)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address.';
+                isValid = false;
+            }
+
+            if (isValid) {
+                const name = `${firstName} ${lastName}`;
+                currentStep++;
+                showStep(currentStep);
+                // Cập nhật giá trị input ẩn
+                document.querySelector('#paypal-name').value = name;
+                document.querySelector('#paypal-email').value = email;
+                document.querySelector('#stripe-name').value = name;
+                document.querySelector('#stripe-email').value = email;
+            }
+        } else if (currentStep < steps.length - 1) {
+            currentStep++;
+            showStep(currentStep);
+        }
+    });
+});
+document.querySelectorAll('.next-next').forEach(button => {
+    button.addEventListener('click', function() {
+        if (currentStep === 0) {
+            const selectedAmount = document.querySelector('#amount').value || document.querySelector('input[name="amount"]:checked');
+            if (selectedAmount) {
+                if (parseFloat(selectedAmount.value || selectedAmount) < 0.1) {
+                    document.querySelector('.amount-error').textContent = 'Please enter an amount greater than or equal to $0.1.'; // Hiển thị lỗi
+                } else {
+                    currentStep++;
+                    showStep(currentStep);
+                    document.querySelector('.selected-amount').textContent = `$${selectedAmount.value || selectedAmount}`; // Hiển thị số tiền đã chọn
+                }
+            } else {
+                document.querySelector('.amount-error').textContent = 'Please select an amount to proceed.'; // Hiển thị lỗi
+            }
+        } else if (currentStep === 1) {
+            const firstName = document.querySelector('input[placeholder="First Name"]').value.trim();
+            const lastName = document.querySelector('input[placeholder="Last Name"]').value.trim();
+            const email = document.querySelector('input[placeholder="Email"]').value.trim();
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+            // Xóa thông báo lỗi cũ
+            document.getElementById('firstNameError').textContent = '';
+            document.getElementById('lastNameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+
+            let isValid = true;
+
+            if (!firstName) {
+                document.getElementById('firstNameError').textContent = 'Please enter your first name.';
+                isValid = false;
+            }
+            if (!lastName) {
+                document.getElementById('lastNameError').textContent = 'Please enter your last name.';
+                isValid = false;
+            }
+            if (!email || !emailPattern.test(email)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address.';
+                isValid = false;
+            }
+
+            if (isValid) {
+                const name = `${firstName} ${lastName}`;
+                currentStep++;
+                showStep(currentStep);
+                // Cập nhật giá trị input ẩn
+                document.querySelector('#paypal-name').value = name;
+                document.querySelector('#paypal-email').value = email;
+                document.querySelector('#stripe-name').value = name;
+                document.querySelector('#stripe-email').value = email;
+            }
+        } else if (currentStep < steps.length - 1) {
+            currentStep++;
+            showStep(currentStep);
+        }
+    });
+});
+
+paypal.Buttons({
+    style: {
+        layout: 'vertical',
+        color: 'blue',
+        shape: 'rect',
+        label: 'paypal'
+    },
+
+    createOrder: function(data, actions) {
+        const amount = document.querySelector('#amount').value || document.querySelector('input[name="amount"]:checked').value;
+        const email = document.querySelector('input[name="email"]').value;
+
+        console.log('Creating order with amount:', amount, 'and email:', email);
+
+        return actions.order.create({
+            purchase_units: [{
+                amount: {
+                    value: amount
+                },
+                description: 'Donation'
+            }],
+            application_context: {
+                shipping_preference: 'NO_SHIPPING'
+            }
+        });
+    },
+
+    onApprove: function(data, actions) {
+    return actions.order.capture().then(async function(details) {
+        console.log('Order approved with details:', details);
+
+        const firstName = document.querySelector('#firstName').value;
+        const lastName = document.querySelector('#lastName').value;
+        const email = document.querySelector('#email').value;
+        const amount = document.querySelector('#amount').value || document.querySelector('input[name="amount"]:checked').value;
+
+        // Gửi thông tin đến server
+        try {
+            const response = await fetch('/save-donation', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    firstName,
+                    lastName,
+                    email,
+                    amount
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to save donation');
+            }
+
+            const fullName = encodeURIComponent(firstName + ' ' + lastName);
+            const redirectUrl = '/complete-order?orderId=' + details.id + '&name=' + fullName;
+            console.log('Redirecting to:', redirectUrl);
+
+            window.location.href = redirectUrl;
+        } catch (error) {
+            console.error('Error saving donation:', error);
+        }
+    });
+},
+
+    onError: function(err) {
+    console.error('PayPal error:', err);
+}
+}).render('#paypal-button-container');
+
+        document.getElementById('donateButton').addEventListener('click', function() {
+            window.location.href = '#donate_now';
+            document.getElementById('donateDialog').style.display = 'block';
+        });
+        document.querySelector('.close-button').addEventListener('click', function() {
+    document.getElementById('donateDialog').style.display = 'none';
+    
+    // Lấy giá trị đã chọn từ form radio
+    const selectedAmount = document.querySelector('#amount').value || document.querySelector('input[name="amount"]:checked').value;
+    
+    // Cập nhật nội dung của thẻ span trong donation-suggestion
+    const donationSuggestion = document.getElementById('donation-suggestion');
+    donationSuggestion.querySelector('.donation-content span:nth-child(2)').textContent = `Complete your ₫${selectedAmount} gift to make a difference`;
+    
+    // Hiển thị thẻ div donation-suggestion với hiệu ứng animation
+    donationSuggestion.style.display = 'flex';
+    donationSuggestion.classList.add('show');
+    donationSuggestion.style.opacity = 0;
+    donationSuggestion.style.transition = 'opacity 0.5s';
+    setTimeout(() => {
+        donationSuggestion.style.opacity = 1;
+    }, 10);
+
+    // Sau 60 giây sẽ ẩn thẻ div donation-suggestion
+    setTimeout(function() {
+        donationSuggestion.style.opacity = 0;
+        setTimeout(() => {
+            donationSuggestion.style.display = 'none';
+        }, 500); // Thời gian chờ cho animation ẩn
+    }, 60000);
+
+    // Xử lý sự kiện cho nút "I'm ready"
+    document.querySelector('.donation-actions .action-button:nth-child(1)').addEventListener('click', function() {
+        document.getElementById('donateDialog').style.display = 'block';
+    });
+
+    // Xử lý sự kiện cho nút "Not today"
+    document.querySelector('.donation-actions .action-button:nth-child(2)').addEventListener('click', function() {
+        donationSuggestion.style.opacity = 0;
+        setTimeout(() => {
+            donationSuggestion.style.display = 'none';
+        }, 500); // Thời gian chờ cho animation ẩn
+    });
+});
+});
+    async function handlePaypalPayment(price, email) {
+        try {
+            const response = await fetch('/payment/create-order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 
+                    price: price, 
+                    email: email 
+                })
+            });
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            // Automatically redirect to payment page
+            window.open(data.orderUrl, '_blank');
+            return data;
+        } catch (error) {
+            console.error('Error:', error);
+            throw error;
+        }
+    }
+
+
+    async function handleStripePayment(price, email) {
+        try {
+            const response = await fetch('/payment/stripe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 
+                    price: price, 
+                    email: email 
+                })
+            });
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+
+            window.location.href = data.orderUrl;
+            return data;
+        } catch (error) {
+            console.error('Error:', error);
+            throw error;
+        }
+    }
+    document.querySelectorAll('input[name="amount"][type="radio"]').forEach(radio => {
+        if (radio.checked) {
+            radio.parentElement.style.backgroundColor = '#ff4500'; 
+            radio.parentElement.style.color = '#ffffff'; 
+        }
+        radio.addEventListener('change', function() {
+            document.querySelectorAll('.donation-options label').forEach(label => {
+                label.style.backgroundColor = '#ffffff'; 
+                label.style.color = '#000000'; 
+            });
+            if (this.checked) {
+                this.parentElement.style.backgroundColor = '#ff4500'; 
+                this.parentElement.style.color = '#ffffff'; 
+            }
+        });
+    });
+
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+            } else {
+                answer.style.display = 'none';
+            }
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    const firstNameInput = document.getElementById('firstName');
+    const lastNameInput = document.getElementById('lastName');
+    const emailInput = document.getElementById('email');
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    const namePattern = /^[a-zA-Z\s]+$/; // Do not allow numbers and special characters
+
+    firstNameInput.addEventListener('input', function() {
+        const errorMessage = document.getElementById('firstNameError');
+        if (!firstNameInput.value.trim()) {
+            errorMessage.textContent = 'Please enter your first name.';
+        } else if (!namePattern.test(firstNameInput.value.trim())) {
+            errorMessage.textContent = 'First name must not contain numbers or special characters.';
+        } else {
+            errorMessage.textContent = '';
+        }
+    });
+
+    lastNameInput.addEventListener('input', function() {
+        const errorMessage = document.getElementById('lastNameError');
+        if (!lastNameInput.value.trim()) {
+            errorMessage.textContent = 'Please enter your last name.';
+        } else if (!namePattern.test(lastNameInput.value.trim())) {
+            errorMessage.textContent = 'Last name must not contain numbers or special characters.';
+        } else {
+            errorMessage.textContent = '';
+        }
+    });
+
+    emailInput.addEventListener('input', function() {
+        const errorMessage = document.getElementById('emailError');
+        if (!emailInput.value.trim() || !emailPattern.test(emailInput.value.trim())) {
+            errorMessage.textContent = 'Please enter a valid email address.';
+        } else {
+            errorMessage.textContent = '';
+        }
+    });
+});
+
+
+
+</script>

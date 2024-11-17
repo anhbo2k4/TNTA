@@ -1,0 +1,972 @@
+.content-issues{
+    
+    flex-direction: column;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.content-issues-header{
+    width: 100%;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: slideInDown 1.5s ease-in-out;
+}
+.content-issues-header img{
+    width: 1920px;
+    height: 700px;
+    object-fit: cover;
+    image-rendering: auto;
+    animation: zoomIn 1.5s ease-in-out;
+}
+.content-issues-header-text {
+    position: absolute;
+    top: 50%;
+    left: 300px;
+    transform: translate(0, -50%);
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: textFadeIn 1.5s ease-in-out;
+}
+.content-issues-header-text span{
+    color: #ff0000;
+    order: -1;
+    animation: textColorChange 5s infinite alternate;
+}
+.content-issues-header-text p{
+    color: #f5f5f5;
+    animation: colorChange 5s infinite alternate;
+}
+
+.container-issues {
+    
+    width: 100%;
+    padding: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+.container-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    animation: slideInUp 1.5s ease-in-out;
+}
+.container-item-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: titleFadeIn 1.5s ease-in-out;
+}
+.container-item-title strong{
+    color: #ff0000;
+    font-size: 30px;
+    animation: textColorChange 5s infinite alternate;
+}
+.container-item-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    padding: 20px;
+    font-size: 16px;
+    color: #666;
+    
+    animation: contentFadeIn 1.5s ease-in-out;
+}
+.container-item-content-text{
+    width: 100%;
+    margin-bottom: 20px;
+    animation: textFadeIn 1.5s ease-in-out;
+}
+.container-item-content-image{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    animation: imageZoomIn 1.5s ease-in-out;
+}
+.container-item-content-image img {
+    max-width: 100%;
+    height: auto;
+    animation: imageZoomIn 1.5s ease-in-out;
+}
+.container-item-content-text strong{
+    color: #ff0000;
+    font-size: 25px;
+    animation: textColorChange 5s infinite alternate;
+}
+.container-item-content-text {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    text-align: justify;
+    animation: textFadeIn 1.5s ease-in-out;
+}
+.container-item-content-text p{
+    font-weight: 700;
+    animation: textFadeIn 1.5s ease-in-out;
+}
+.container-item-content-line{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+   
+    animation: lineFadeIn 1.5s ease-in-out;
+}
+.container-item-content-line p{
+    font-size: 24px;
+    animation: textFadeIn 1.5s ease-in-out;
+}
+.container-item-content-line a{
+    font-size: 24px;
+    text-decoration: underline;
+    color: #ff0000;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    animation: linkFadeIn 1.5s ease-in-out;
+}
+.container-item-content-line a:hover {
+    color: #ff6600;
+    text-decoration: none;
+}
+hr{
+    width: 60%;
+   
+    animation: lineFadeIn 1.5s ease-in-out;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes contentFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes imageZoomIn {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes lineFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes linkFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes textFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@media only screen and (min-width: 0) and (max-width: 450px) {
+    
+    .content-issues{
+        margin-top: 50px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        animation: fadeIn 1.5s ease-in-out;
+        max-width: 450px;
+        
+    }
+    .content-issues-header{
+        width: 100%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: slideInDown 1.5s ease-in-out;
+    }
+    .content-issues-header img{
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        image-rendering: auto;
+        animation: zoomIn 1.5s ease-in-out;
+    }
+    .content-issues-header-text {
+        position: absolute;
+        top: 30%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        color: #000;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        animation: textFadeIn 1.5s ease-in-out;
+    }
+    .content-issues-header-text span{
+        color: #ff0000;
+        order: -1;
+        animation: textColorChange 5s infinite alternate;
+    }
+    .content-issues-header-text p{
+        color: #f5f5f5;
+        animation: colorChange 5s infinite alternate;
+    }
+
+
+    .container-issues {
+        
+        width:80%;
+        padding: 10px;
+        animation: fadeIn 1.5s ease-in-out;
+        
+    }
+    .container-item {
+        width: 80%;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        animation: slideInUp 1.5s ease-in-out;
+    }
+    .container-item-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        animation: titleFadeIn 1.5s ease-in-out;
+    }
+    .container-item-title strong{
+        color: #ff0000;
+        font-size: 20px;
+        animation: textColorChange 5s infinite alternate;
+    }
+    .container-item-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        padding: 10px;
+        font-size: 14px;
+        color: #666;
+        animation: contentFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-text{
+        width: 80%;
+        margin-bottom: 10px;
+        animation: textFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-image{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        animation: imageZoomIn 1.5s ease-in-out;
+    }
+    .container-item-content-image img {
+        max-width: 100%;
+        height: auto;
+        animation: imageZoomIn 1.5s ease-in-out;
+    }
+    .container-item-content-text strong{
+        color: #ff0000;
+        font-size: 18px;
+        animation: textColorChange 5s infinite alternate;
+    }
+    .container-item-content-text {
+        font-family: 'Times New Roman', Times, serif;
+        line-height: 1.6;
+        text-align: justify;
+        animation: textFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-text p{
+        font-weight: 700;
+        animation: textFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-line{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        animation: lineFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-line p{
+        font-size: 18px;
+        animation: textFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-line a{
+        font-size: 18px;
+        text-decoration: underline;
+        color: #ff0000;
+        font-weight: bold;
+        transition: color 0.3s ease;
+        animation: linkFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-line a:hover {
+        color: #ff6600;
+        text-decoration: none;
+    }
+    hr{
+        width: 80%;
+        animation: lineFadeIn 1.5s ease-in-out;
+    }
+    
+    @keyframes slideInUp {
+        from {
+            transform: translateY(100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes titleFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes contentFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes imageZoomIn {
+        from {
+            transform: scale(0.5);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+    
+    @keyframes lineFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes linkFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideInDown {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes zoomIn {
+        from {
+            transform: scale(0.5);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+    
+    @keyframes textFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+@media only screen and (min-width: 0) and (max-width: 1700px) {
+    
+    .content-issues{
+        margin-top: 50px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        animation: fadeIn 1.5s ease-in-out;
+        
+        
+    }
+    .content-issues-header{
+        width: 100%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: slideInDown 1.5s ease-in-out;
+    }
+    .content-issues-header img{
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        image-rendering: auto;
+        animation: zoomIn 1.5s ease-in-out;
+    }
+    .content-issues-header-text {
+        position: absolute;
+        top: 30%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        color: #000;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        animation: textFadeIn 1.5s ease-in-out;
+    }
+    .content-issues-header-text span{
+        color: #ff0000;
+        order: -1;
+        animation: textColorChange 5s infinite alternate;
+    }
+    .content-issues-header-text p{
+        color: #f5f5f5;
+        animation: colorChange 5s infinite alternate;
+    }
+
+
+    .container-issues {
+        
+        width:100%;
+        padding: 10px;
+        animation: fadeIn 1.5s ease-in-out;
+        
+    }
+    .container-item {
+
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        animation: slideInUp 1.5s ease-in-out;
+    }
+    .container-item-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        animation: titleFadeIn 1.5s ease-in-out;
+    }
+    .container-item-title strong{
+        color: #ff0000;
+        font-size: 20px;
+        animation: textColorChange 5s infinite alternate;
+    }
+    .container-item-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        padding: 10px;
+        font-size: 14px;
+        color: #666;
+        animation: contentFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-text{
+        width: 100%;
+        margin-bottom: 10px;
+        animation: textFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-image{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        animation: imageZoomIn 1.5s ease-in-out;
+    }
+    .container-item-content-image img {
+        max-width: 100%;
+        height: auto;
+        animation: imageZoomIn 1.5s ease-in-out;
+    }
+    .container-item-content-text strong{
+        color: #ff0000;
+        font-size: 18px;
+        animation: textColorChange 5s infinite alternate;
+    }
+    .container-item-content-text {
+        font-family: 'Times New Roman', Times, serif;
+        line-height: 1.6;
+        text-align: justify;
+        animation: textFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-text p{
+        font-weight: 700;
+        animation: textFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-line{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        animation: lineFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-line p{
+        font-size: 18px;
+        animation: textFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-line a{
+        font-size: 18px;
+        text-decoration: underline;
+        color: #ff0000;
+        font-weight: bold;
+        transition: color 0.3s ease;
+        animation: linkFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-line a:hover {
+        color: #ff6600;
+        text-decoration: none;
+    }
+    hr{
+        width: 100%;
+        animation: lineFadeIn 1.5s ease-in-out;
+    }
+    
+    @keyframes slideInUp {
+        from {
+            transform: translateY(100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes titleFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes contentFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes imageZoomIn {
+        from {
+            transform: scale(0.5);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+    
+    @keyframes lineFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes linkFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideInDown {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes zoomIn {
+        from {
+            transform: scale(0.5);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+    
+    @keyframes textFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+@media only screen and (min-width: 0) and (max-width: 700px) {
+    
+    .content-issues{
+        margin-top: 50px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        animation: fadeIn 1.5s ease-in-out;
+        
+        
+    }
+    .content-issues-header{
+        width: 100%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: slideInDown 1.5s ease-in-out;
+    }
+    .content-issues-header img{
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        image-rendering: auto;
+        animation: zoomIn 1.5s ease-in-out;
+    }
+    .content-issues-header-text {
+        position: absolute;
+        top: 30%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        color: #000;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        animation: textFadeIn 1.5s ease-in-out;
+    }
+    .content-issues-header-text span{
+        color: #ff0000;
+        order: -1;
+        animation: textColorChange 5s infinite alternate;
+    }
+    .content-issues-header-text p{
+        color: #f5f5f5;
+        animation: colorChange 5s infinite alternate;
+    }
+
+
+    .container-issues {
+        
+        width:100%;
+        padding: 10px;
+        animation: fadeIn 1.5s ease-in-out;
+        
+    }
+    .container-item {
+
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        animation: slideInUp 1.5s ease-in-out;
+    }
+    .container-item-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        animation: titleFadeIn 1.5s ease-in-out;
+    }
+    .container-item-title strong{
+        color: #ff0000;
+        font-size: 20px;
+        animation: textColorChange 5s infinite alternate;
+    }
+    .container-item-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        padding: 10px;
+        font-size: 14px;
+        color: #666;
+        animation: contentFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-text{
+        width: 100%;
+        margin-bottom: 10px;
+        animation: textFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-image{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        animation: imageZoomIn 1.5s ease-in-out;
+    }
+    .container-item-content-image img {
+        max-width: 100%;
+        height: auto;
+        animation: imageZoomIn 1.5s ease-in-out;
+    }
+    .container-item-content-text strong{
+        color: #ff0000;
+        font-size: 18px;
+        animation: textColorChange 5s infinite alternate;
+    }
+    .container-item-content-text {
+        font-family: 'Times New Roman', Times, serif;
+        line-height: 1.6;
+        text-align: justify;
+        animation: textFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-text p{
+        font-weight: 700;
+        animation: textFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-line{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        animation: lineFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-line p{
+        font-size: 18px;
+        animation: textFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-line a{
+        font-size: 18px;
+        text-decoration: underline;
+        color: #ff0000;
+        font-weight: bold;
+        transition: color 0.3s ease;
+        animation: linkFadeIn 1.5s ease-in-out;
+    }
+    .container-item-content-line a:hover {
+        color: #ff6600;
+        text-decoration: none;
+    }
+    hr{
+        width: 100%;
+        animation: lineFadeIn 1.5s ease-in-out;
+    }
+    
+    @keyframes slideInUp {
+        from {
+            transform: translateY(100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes titleFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes contentFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes imageZoomIn {
+        from {
+            transform: scale(0.5);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+    
+    @keyframes lineFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes linkFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideInDown {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes zoomIn {
+        from {
+            transform: scale(0.5);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+    
+    @keyframes textFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}

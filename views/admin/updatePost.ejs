@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Post</title>
+    <link rel="stylesheet" href="/css/adminDashboard.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control {
+            border-radius: 4px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+    <!-- CKEditor CDN -->
+    <script src="/ckeditor/ckeditor.js"></script>
+</head>
+<body>
+   
+    <div class="container">
+        <h1>Update Post</h1>
+        <form action="/admin/editPost/<%= post.id %>" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <textarea id="title" name="title" class="form-control" required><%= post.title %></textarea>
+            </div>
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea id="content" name="content" class="form-control" required><%= post.content %></textarea>
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" name="categoryId" class="form-control" required>
+                    <% categories.forEach(category => { %>
+                        <option value="<%= category.id %>" <%= category.id === post.categoryId ? 'selected' : '' %>><%= category.name %></option>
+                    <% }) %>
+                </select>
+            </div>
+            <div class="form-group mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" class="form-control" id="image" name="image">
+                <canvas id="imageCanvas" style="border:1px solid #000;"></canvas>
+                <button type="button" id="cropImageBtn">Crop Image</button>
+                <button type="button" id="resetImageBtn">Reset Image</button>
+                <% if (post.imageUrl) { %>
+                    <img id="currentImage" src="<%= post.imageUrl %>" alt="Current Image" style="display: block; margin-top: 10px; max-width: 100%;">
+                <% } %>
+             </div> 
+            <div class="form-group">
+                <label for="audio">Audio</label>
+                <input type="file" id="audio" name="audio" class="form-control-file">
+                <% if (post.audioUrl) { %>
+                    <audio controls style="display: block; margin-top: 10px;">
+                        <source src="<%= post.audioUrl %>" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                <% } %>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Post</button>
+        </form>
+    </div>
+
+    <script>
+        // Apply CKEditor to all textareas
+        CKEDITOR.replace('title', {
+            toolbar: [
+                { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'Undo', 'Redo'] },
+                { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline'] },
+                { name: 'paragraph', items: ['NumberedList', 'BulletedList'] },
+                { name: 'insert', items: ['Image', 'Table', 'Link'] },
+                { name: 'styles', items: ['Font', 'FontSize', 'TextColor', 'BGColor'] }
+            ],
+            font_names: 'Arial/Arial, Helvetica, sans-serif;' +
+                        'Comic Sans MS/Comic Sans MS, cursive;' +
+                        'Courier New/Courier New, Courier, monospace;' +
+                        'Georgia/Georgia, serif;' +
+                        'Lucida Sans Unicode/Lucida Sans Unicode, Lucida Grande, sans-serif;' +
+                        'Tahoma/Tahoma, Geneva, sans-serif;' +
+                        'Times New Roman/Times New Roman, Times, serif;' +
+                        'Trebuchet MS/Trebuchet MS, Helvetica, sans-serif;' +
+                        'Verdana/Verdana, Geneva, sans-serif'
+        });
+        CKEDITOR.replace('content', {
+            toolbar: [
+                { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'Undo', 'Redo'] },
+                { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline'] },
+                { name: 'paragraph', items: ['NumberedList', 'BulletedList'] },
+                { name: 'insert', items: ['Image', 'Table', 'Link'] },
+                { name: 'styles', items: ['Font', 'FontSize', 'TextColor', 'BGColor'] }
+            ],
+            font_names: 'Arial/Arial, Helvetica, sans-serif;' +
+                        'Comic Sans MS/Comic Sans MS, cursive;' +
+                        'Courier New/Courier New, Courier, monospace;' +
+                        'Georgia/Georgia, serif;' +
+                        'Lucida Sans Unicode/Lucida Sans Unicode, Lucida Grande, sans-serif;' +
+                        'Tahoma/Tahoma, Geneva, sans-serif;' +
+                        'Times New Roman/Times New Roman, Times, serif;' +
+                        'Trebuchet MS/Trebuchet MS, Helvetica, sans-serif;' +
+                        'Verdana/Verdana, Geneva, sans-serif'
+        });
+        const imageInput = document.getElementById('image');
+        const canvas = document.getElementById('imageCanvas');
+        const ctx = canvas.getContext('2d');
+        const cropImageBtn = document.getElementById('cropImageBtn');
+        const resetImageBtn = document.getElementById('resetImageBtn');
+        const currentImage = document.getElementById('currentImage');
+
+        let img = new Image();
+        let originalImageSrc = '';
+        let isDragging = false;
+        let startX, startY, endX, endY;
+
+        imageInput.addEventListener('change', () => {
+            const file = imageInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    img.onload = () => {
+                        originalImageSrc = e.target.result;
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        ctx.drawImage(img, 0, 0);
+                        canvas.style.display = 'block';
+                        if (currentImage) {
+                            currentImage.style.display = 'none';
+                        }
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        canvas.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.offsetX;
+            startY = e.offsetY;
+        });
+
+        canvas.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                endX = e.offsetX;
+                endY = e.offsetY;
+                draw();
+            }
+        });
+
+        canvas.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, 0, 0);
+            if (isDragging) {
+                ctx.strokeStyle = 'red';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(startX, startY, endX - startX, endY - startY);
+            }
+        }
+
+        cropImageBtn.addEventListener('click', () => {
+            const cropWidth = endX - startX;
+            const cropHeight = endY - startY;
+
+            const tempCanvas = document.createElement('canvas');
+            const tempCtx = tempCanvas.getContext('2d');
+            tempCanvas.width = cropWidth;
+            tempCanvas.height = cropHeight;
+
+            tempCtx.drawImage(canvas, startX, startY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            canvas.width = cropWidth;
+            canvas.height = cropHeight;
+            ctx.drawImage(tempCanvas, 0, 0);
+        });
+
+        resetImageBtn.addEventListener('click', () => {
+            img.src = originalImageSrc;
+            img.onload = () => {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.drawImage(img, 0, 0);
+            };
+        });
+    </script>
+</body>
+</html>

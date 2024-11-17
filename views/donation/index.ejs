@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <link rel="stylesheet" href="../css/homepage.css">   
+   <link rel="stylesheet" href="../css/navbar.css">
+   <link rel="stylesheet" href="../css/footer.css">
+   <link rel="stylesheet" href="../css/donate.css">
+   <link rel="stylesheet" href="../css/theissues.css">
+   <link rel="stylesheet" href="../css/wewilldo.css">
+   <link rel="stylesheet" href="../css/post.css">
+   <link rel="stylesheet" href="../css/preventing.css">
+   
+   <link rel="icon" href="/logo.png">
+   <title>Leaf Aid</title>
+
+</head>
+<body>
+    <%- include('../navbar') %>
+    <div class="donate-content">
+        <div class="donate-content-header">
+            <div class="donate-content-header-text">
+                <strong> <span>Open your heart - So no one is left behind</span></strong>
+            </div>
+            <div class="donate-content-header-btn">
+                <a href="#donate_now" id="donateButton" class="nav-link" onclick="highlightLink(this); document.getElementById('donateDialog').style.display = 'block';" style="text-decoration: none;color: white;">DONATE NOW</a>
+            </div>
+            <div class="donate-content-header-img">
+                <img src="/img/donate-bg.jpg" alt="Donate">
+            </div>
+        </div>
+        <div class="donate-content-container">
+            <div class="donate-content-container-item">
+                <div class="donate-content-container-item-text">
+                    <strong>Let's Lend a Hand – For a Brighter Future</strong>
+                 </div>
+                 <div class="donate-content-container-item-content">
+                     <strong>"When you help someone, you are building a better world. Many people out there are enduring hardships every day. Some children do not have a full meal, some families have no shelter. We urge you to share love with us through even the smallest contributions. Your support not only changes their lives but also lights up hope in everyone's heart. Let's join hands with us to create a better future!"</strong>
+                 </div>
+                 <div class="donate-content-container-item-img">
+                     <img src="/img/donate-container-item-1.jpg" alt="Donate">
+                 </div>
+            </div>
+            <div class="donate-content-container-item">
+                <div class="donate-content-container-item-text">
+                    <strong>A Drop of Blood Given – A Life Saved</strong>
+                 </div>
+                 <div class="donate-content-container-item-content">
+                     <strong>"Do you know that with each of your contributions, you can save unfortunate lives? Many families, many children are in difficulty and waiting for a miracle. Your contribution will help provide food, shelter, medicine, and essential needs for those who truly need it. Let's join hands, so that each drop of love from you can turn into joy, laughter, and most importantly, hope for a better life."</strong>
+                 </div>
+                 <div class="donate-content-container-item-img">
+                     <img src="/img/blood.png" alt="Donate">
+                 </div>
+            </div>
+            <div class="donate-content-container-item">
+                <div class="donate-content-container-item-text">
+                    <strong>Sharing is Happiness – Helping Those in Need</strong>
+                 </div>
+                 <div class="donate-content-container-item-content">
+                     <strong>"In this hectic life, sometimes just a little care from each person is enough to make miracles happen. We believe that when we all contribute, miracles will happen. Each of your contributions helps build a strong foundation to support those in need. Let's share together, let's send love together, because only love can create true happiness!"</strong>
+                 </div>
+                 <div class="donate-content-container-item-img">
+                     <img src="/img/sharing.jpg" alt="Donate">
+                 </div>
+            </div>
+        </div>
+        <div class="donate-content-feedback">
+            <div class="donate-content-feedback-text">
+                <strong>Some feedback came from benefactors who supported</strong>
+            </div>
+            <div class="feedback-slider-container">
+                <div class="feedback-slider">
+                    <div class="donate-content-feedback-item">
+                        <div class="donate-content-feedback-item-img">
+                            <img src="/img/donator1.jpg" alt="Feedback">
+                        </div>
+                        <div class="donate-content-feedback-item-name">
+                            <strong>Mr. David Brown</strong>
+                            <p>Donated : 3550$</p>
+                        </div>
+                        <div class="donate-content-feedback-item-content">
+                            <strong>“Contributing to those in need fills my heart with joy. I believe that even a small gesture can make a significant difference in their lives and pave the way for a hopeful future.”</strong>
+                        </div>
+                    </div>
+                    <div class="donate-content-feedback-item">
+                        <div class="donate-content-feedback-item-img">
+                            <img src="/img/donator2.jpg" alt="Feedback">
+                        </div>
+                        <div class="donate-content-feedback-item-name">
+                            <strong>Ms. Emily Johnson</strong>
+                            <p>Donated : 4200$</p>
+                        </div>
+                        <div class="donate-content-feedback-item-content">
+                            <strong>“Giving is not just about making a donation, it's about making a difference. I am grateful to be able to help those in need and bring a smile to their faces.”</strong>
+                        </div>
+                    </div>
+                    <div class="donate-content-feedback-item">
+                        <div class="donate-content-feedback-item-img">
+                            <img src="/img/donator3.jpg" alt="Feedback">
+                        </div>
+                        <div class="donate-content-feedback-item-name">
+                            <strong>Mr. Michael Smith</strong>
+                            <p>Donated : 5000$</p>
+                        </div>
+                        <div class="donate-content-feedback-item-content">
+                            <strong>“Helping others is a way to help ourselves. I believe that every act of kindness, no matter how small, can create a ripple effect of positive change.”</strong>
+                        </div>
+                    </div>
+                    <div class="donate-content-feedback-item">
+                        <div class="donate-content-feedback-item-img">
+                            <img src="/img/donator4.jpg" alt="Feedback">
+                        </div>
+                        <div class="donate-content-feedback-item-name">
+                            <strong>Ms. Sarah Williams</strong>
+                            <p>Donated : 3100$</p>
+                        </div>
+                        <div class="donate-content-feedback-item-content">
+                            <strong>“The joy of giving is the greatest joy of all. Knowing that my contribution can make a difference in someone's life is truly fulfilling.”</strong>
+                        </div>
+                    </div>
+                    <div class="donate-content-feedback-item">
+                        <div class="donate-content-feedback-item-img">
+                            <img src="/img/donator5.jpg" alt="Feedback">
+                        </div>
+                        <div class="donate-content-feedback-item-name">
+                            <strong>Mr. James Anderson</strong>
+                            <p>Donated : 2750$</p>
+                        </div>
+                        <div class="donate-content-feedback-item-content">
+                            <strong>“We rise by lifting others. I am honored to be a part of this cause and to contribute to the well-being of those in need.”</strong>
+                        </div>
+                    </div>
+                    <!-- Thêm các item khác tương tự -->
+                </div>
+            </div>
+            <div class="donate-content-feedback-btn">
+                <a href="#donate_now" id="donateButton" class="nav-link" onclick="highlightLink(this); document.getElementById('donateDialog').style.display = 'block';" style="text-decoration: none;color: white;">DONATE NOW</a>
+            </div>
+           
+        </div>
+    </div>
+
+    <%- include('../footer') %>
+    <script src="../js/footer.js"></script>
+
+</body>
+</html>

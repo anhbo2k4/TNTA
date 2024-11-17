@@ -1,0 +1,121 @@
+<%- include('../head') %>  
+<body>
+    <%- include('../navbar') %>
+    <div class="content-posts">
+        <div class="content-posts-header">
+            <div class="content-posts-header-text">
+               <div class="content-posts-header-text-text">
+                <strong>News</strong>
+               </div>
+            </div>
+        </div>  
+      
+        <div class="content-posts-filter">
+            <p>FILTER NEWS:</p>
+            <div class="category-links">
+                <a href="/news" class="category-link" data-category="">ALL</a>
+                <% if (categories && categories.length > 0) { %>
+                    <% categories.forEach(function(category) { %>
+                        <a href="/news?categoryId=<%- category.id %>" class="category-link" data-category="<%- category.id %>"><%= category.name %></a>
+                    <% }); %>
+                <% } else { %>
+                    <span>No categories available</span>
+                <% } %>
+            </div>
+        </div>  
+        <hr style="border: 0; height: 1px; background: #ccc; margin: 20px 0; width: 100%;">
+        <div class="content-posts-body" id="postsContainer">
+            <% posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)).forEach(function(post) { %>
+                <div class="content-posts-body-item" data-category="<%- post.categoryId %>">
+                    <div class="card">
+                        <img class="card-img-top" src="<%- post.imageUrl ? post.imageUrl : '/img/default.jpg' %>" alt="Post image">
+                        <div class="card-body">
+                            <a href="/post/<%- post.slug %>" >
+                                <h5 class="card-title"><%- post.title %></h5>
+                            </a>
+                            <p class="card-text"><small class="text-muted">Posted on: <%- post.createdAt.toLocaleDateString() %></small></p>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+
+        <div class="pagination">
+            <button id="prevPage" class="page-btn" <%= currentPage === 1 ? 'disabled' : '' %> onclick="changePage('/news?page=<%= currentPage - 1 %>')">Previous</button>
+            <% for (let i = 1; i <= totalPages; i++) { %>
+                <button class="page-link <%= currentPage === i ? 'active' : '' %>" data-page="<%= i %>" onclick="changePage('/news?page=<%= i %>')"><%= i %></button>
+            <% } %>
+            <button id="nextPage" class="page-btn" <%= currentPage === totalPages ? 'disabled' : '' %> onclick="changePage('/news?page=<%= currentPage + 1 %>')">Next</button>
+        </div>
+    </div>
+    <style>
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .page-link, .page-btn {
+            margin: 0 5px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #333;
+            cursor: pointer;
+        }
+        .page-link.active {
+            background-color: red;
+            color: white;
+        }
+        .fade-out {
+            animation: fadeOut 0.5s forwards;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s forwards;
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+    <script>
+        function changePage(url) {
+            const postsContainer = document.getElementById('postsContainer');
+            postsContainer.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = url;
+            }, 500);
+        }
+
+        document.querySelectorAll('.category-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const categoryId = this.getAttribute('data-category');
+                changePage(categoryId ? `/news?categoryId=${categoryId}` : '/news');
+            });
+        });
+
+        document.getElementById('prevPage').addEventListener('click', function() {
+            if (currentPage > 1) {
+                changePage(`/news?page=${currentPage - 1}<%= categoryId ? '&categoryId=' + categoryId : '' %>`);
+            }
+        });
+
+        document.getElementById('nextPage').addEventListener('click', function() {
+            if (currentPage < totalPages) {
+                changePage(`/news?page=${currentPage + 1}<%= categoryId ? '&categoryId=' + categoryId : '' %>`);
+            }
+        });
+
+        window.addEventListener('load', () => {
+            const postsContainer = document.getElementById('postsContainer');
+            postsContainer.classList.add('fade-in');
+        });
+    </script>
+    <%- include('../footer') %>
+</body>

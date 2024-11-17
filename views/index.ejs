@@ -1,0 +1,103 @@
+<%- include('head') %>  
+<body>
+    <%- include('navbar') %>
+    
+    <div class="content">
+        <div class="content-header">
+            <div class="content-img">
+                <img src="/img/bg-bg.jpg" alt="Background Image" style="margin-top: 30px;">
+            </div>
+            <div class="content-text">
+                <h1 style="color: #ff0000;"> <strong>Leaf Aid</strong> for Children</h1>
+                <p>PLEASE SUPPORT OUR URGENT RESPONSE</p>
+                <a href="/donate" class="btnDonate">DONATE NOW</a>
+            </div>
+        </div>
+        <div class="content-body">
+            <h2>
+               <strong>Leaf Aid</strong> works for the health and dignity of people worldwide, especially for children suffering from hunger, illness, critical diseases, and the devastating impacts of war.
+            </h2>
+            <p>We provide immediate medical aid to those in urgent need while also building local capacities and skills to ensure the sustainable development of healthcare systems globally.
+            </p>
+            <a href="/donate" class="learn-more-button">LEARN MORE</a>
+        </div>
+        <div class="container">
+            <div class="arrow-over-image arrow-over-image--dark-blue" >
+                <a class="arrow-over-image__link" href="/news" style="background-image: url('https://res.cloudinary.com/dj0ipxidd/image/upload/v1731828939/fwyobwedmmoqdtlerssm.webp')">
+                    <div class="arrow-over-image__text-outer">
+                        <div class="arrow-over-image__text">
+                            <div class="arrow-over-image__text-inner">
+                                <h2 style="background-color: #363636;">The Impact of Conflict on Women and Girls in Sudan</h2>
+                                <p>I read with horror the testimonies collected by organizations such as the United Nations and local media of women in Sudan. They’ve been raped in their homes, on the roads, in front of their sons and daughters,...</p>
+                                <p><span class="button">See more at News</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="arrow-over-image arrow-over-image--dark-blue" >
+                <a class="arrow-over-image__link" href="/news" style="background-image: url('https://res.cloudinary.com/dj0ipxidd/image/upload/v1731441552/d9h4nfe965wo8zcejdg2.jpg')">
+                    <div class="arrow-over-image__text-outer">
+                        <div class="arrow-over-image__text">
+                            <div class="arrow-over-image__text-inner">
+                                <h2 style="background-color: #ff0000;">Sexual violence stalks women and girls fleeing Sudan for South Sudan</h2>
+                                <p>“My neighbour Rose* travelled with me to Renk, but her three daughters stayed behind in Khartoum. Later she learned they had been gang raped,” said Martha.*</p>
+                                <p><span class="button">See more at News</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="arrow-over-image arrow-over-image--dark-blue" >
+                <a class="arrow-over-image__link" href="/news" style="background-image: url('https://res.cloudinary.com/dj0ipxidd/image/upload/v1731439378/rggpkzackz646djk9ca9.png')">
+                    <div class="arrow-over-image__text-outer">
+                        <div class="arrow-over-image__text">
+                            <div class="arrow-over-image__text-inner">
+                                <h2 style="background-color: #2b2626;">
+                                    “We lost everything”: In Yemen, a mother’s grief lays bare the human cost of the climate crisis</h2>
+                                <p> “One day, when I was returning from fetching water, I collapsed on the road. I was bleeding so badly that I knew I was going to lose my baby.” </p>
+                                <p><span class="button">See more at News</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="news" >
+            <div class="container">
+                <div class="news-header">
+                  
+                    <a href="#" class="news-header-link">Sign up for news information</a>
+                    <div class="news-header-text">
+                        <h2>Latest News</h2>
+                    </div>
+                </div>
+                <div class="news-feed" >
+                    <% posts.slice(0, 3).forEach(function(post) { %>
+                        <div class="news-item">
+                            <a class="news-item-link" href="/post/<%- post.slug %>">
+                                <span class="news-item-image">
+                                    <img class="news-item-image" src="<%- post.imageUrl %>" alt="<%- post.title %>">
+                                </span>
+                                <span class="news-item-text">
+                                    <span class="news-item-text-inner">
+                                        <h6><%- post.title %></h6>
+                                        <p><%- post.content.substring(0, 100) %>...</p>
+                                    </span>
+                                </span>
+                            </a>
+                        </div>
+                    <% }); %>
+                </div>
+                <div class="news-more">
+                    <a href="/news" class="news-more-link">See more News</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('footer') %>
+</body>

@@ -1,0 +1,777 @@
+/* Start of Selection */
+.donate-content{
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Arial', sans-serif; /* Thay đổi font chữ */
+    animation: scrollFadeIn 2s ease-in-out; /* Thêm hiệu ứng mờ dần khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-header{
+    width: 100%;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: scrollSlideInLeft 1s ease-in-out; /* Thêm hiệu ứng trượt xuống khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-header img{
+    width: 1920px;
+    height: 700px;
+    object-fit: cover;
+    image-rendering: auto;
+    animation: scrollZoomIn 1.5s ease-in-out; /* Thêm hiệu ứng phóng to khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-header-text {
+    position: absolute;
+    left: 300px;
+    transform: translate(0, -50%);
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 50%;
+    font-family: 'Georgia', serif; /* Thay đổi font chữ */
+    animation: scrollBounceIn 1s ease-in-out; /* Thêm hiệu ứng bật vào khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-header-text span{
+    background: linear-gradient(to right, #ff0000 40%, #ffffff 40%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.donate-content-header-text p{
+    animation: colorChange 5s ease-in-out infinite;
+}
+.donate-content-header-btn{
+    position: absolute;
+    top: 14%;
+    left: 18%;
+    transform: translate(0, -50%);
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    font-family: 'Verdana', sans-serif; /* Thay đổi font chữ */
+    animation: scrollPulse 2s infinite; /* Thêm hiệu ứng nhịp đập khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-header-btn:hover {
+    background-color: #cc0000;
+}
+.donate-content-container{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 40px;
+    font-family: 'Tahoma', sans-serif; /* Thay đổi font chữ */
+    animation: scrollFadeInUp 1.5s ease-in-out; /* Thêm hiệu ứng mờ dần từ dưới lên khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-container-item{
+    width: 60%;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: scrollSlideInLeft 1s ease-in-out; /* Thêm hiệu ứng trượt vào từ trái khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-container-item-text{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ff0000;
+    font-family: 'Courier New', monospace; /* Thay đổi font chữ */
+    animation: scrollFadeIn 1s ease-in-out; /* Thêm hiệu ứng mờ dần khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}   
+.donate-content-container-item-content {
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: 'Times New Roman', Times, serif; /* Thay đổi font chữ */
+    animation: scrollFadeIn 1s ease-in-out; /* Thêm hiệu ứng mờ dần khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-container-item-img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    animation: scrollZoomIn 1.5s ease-in-out; /* Thêm hiệu ứng phóng to khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-container-item-img img{
+    max-width: 100%;
+    height: auto;
+    animation: scrollZoomIn 1.5s ease-in-out; /* Thêm hiệu ứng phóng to khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+
+.donate-content-feedback {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    animation: scrollFadeInUp 1.5s ease-in-out; /* Thêm hiệu ứng mờ dần từ dưới lên khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-feedback-text {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #b71c1c;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    animation: scrollFadeIn 1s ease-in-out; /* Thêm hiệu ứng mờ dần khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.feedback-slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: auto;
+    border-radius: 20px;
+    animation: scrollSlideInUp 1s ease-in-out; /* Thêm hiệu ứng trượt lên khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.feedback-slider {
+    display: flex;
+    flex-wrap: nowrap; /* Không cho phép xuống dòng */
+    overflow-x: auto; /* Cho phép cuộn ngang nếu cần */
+    gap: 10px; /* Khoảng cách giữa các slide */
+    scrollbar-width: none; /* Ẩn thanh cuộn trên Firefox */
+    -ms-overflow-style: none;  /* Ẩn thanh cuộn trên Internet Explorer và Edge */
+    width: 100%;
+    animation: scrollSlideInUp 1s ease-in-out; /* Thêm hiệu ứng trượt lên khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.feedback-slider::-webkit-scrollbar {
+    display: none; /* Ẩn thanh cuộn trên Chrome, Safari và Opera */
+}
+
+.donate-content-feedback-item {
+    flex: 0 0 auto; /* Đảm bảo các slide không co giãn */
+    opacity: 1; /* Hiển thị rõ ràng tất cả các slide */
+    display: block;
+    width: 350px; /* Đặt chiều rộng cố định cho mỗi slide */
+    box-sizing: border-box;
+    padding: 25px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    height: 680px;
+    margin: 10px;
+    position: relative;
+    animation: scrollFadeIn 1s ease-in-out; /* Thêm hiệu ứng mờ dần khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-feedback-item.active {
+    opacity: 1; /* Slide được chọn sẽ rõ ràng */
+}
+.donate-content-feedback-item-img {
+    margin-bottom: 25px;
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    height: 360px;
+    padding-right: 20px;
+    animation: scrollZoomIn 1.5s ease-in-out; 
+    overflow: hidden;   /* Thêm hiệu ứng phóng to khi cuộn */
+}
+.donate-content-feedback-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    height: 360px;
+    animation: scrollZoomIn 1.5s ease-in-out; /* Thêm hiệu ứng phóng to khi cuộn */
+    transition: transform 0.3s ease-in-out; /* Thêm hiệu ứng chuyển đổi khi hover */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-feedback-item img:hover {
+    transform: scale(1.1); /* Phóng to ảnh khi hover */
+}
+.donate-content-feedback-item-name {
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    color: #333;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    animation: scrollFadeIn 1s ease-in-out; /* Thêm hiệu ứng mờ dần khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-feedback-item-name p{
+    font-size: 1em;
+    color: #ff0000;
+    animation: scrollFadeIn 1s ease-in-out; /* Thêm hiệu ứng mờ dần khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-feedback-item-content {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    animation: scrollFadeIn 1s ease-in-out; /* Thêm hiệu ứng mờ dần khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 14px;
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    animation: scrollBounceIn 1s ease-in-out; /* Thêm hiệu ứng bật vào khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.slider-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.slider-button.left {
+    left: 20px;
+}
+.slider-button.right {
+    right: 20px;
+}
+.feedback-slider {
+    display: flex;
+    transition: transform 0.6s ease;
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-feedback-btn{
+    margin-top: 20px;
+    animation: scrollFadeInUp 1.5s ease-in-out; /* Thêm hiệu ứng mờ dần từ dưới lên khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-feedback-btn a{
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    animation: scrollPulse 2s infinite; /* Thêm hiệu ứng nhịp đập khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-total{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    font-family: 'Times New Roman', Times, serif;
+    animation: scrollFadeInUp 1.5s ease-in-out;
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-total span{
+    color: #ff0000;
+}
+.donate-total strong{
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+@media only screen and (max-width: 1000px) {
+
+.donate-content-header-text {
+    position: absolute;
+    left: 300px;
+    transform: translate(0, -50%);
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 50%;
+    font-family: 'Georgia', serif; 
+    animation: scrollBounceIn 1s ease-in-out; 
+    overflow: hidden; 
+}
+.donate-content-header-text span{
+    background: linear-gradient(to right, #ff0000 40%, #ffffff 40%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.donate-content-header-text p{
+    animation: colorChange 5s ease-in-out infinite;
+}
+.donate-content-header-btn{
+    position: relative;
+    top: 14%;
+    
+    transform: translate(0, -50%);
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    font-family: 'Verdana', sans-serif; 
+    animation: scrollPulse 2s infinite; 
+    overflow: hidden; 
+}
+.donate-content-header-btn:hover {
+    background-color: #cc0000;
+}
+.donate-content-container{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 40px;
+    font-family: 'Tahoma', sans-serif; 
+    animation: scrollFadeInUp 1.5s ease-in-out; 
+    overflow: hidden; 
+}
+.donate-content-container-item{
+    width: 60%;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: scrollSlideInLeft 1s ease-in-out;
+    overflow: hidden; 
+}
+.donate-content-container-item-text{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ff0000;
+    font-family: 'Courier New', monospace; /* Thay đổi font chữ */
+    animation: scrollFadeIn 1s ease-in-out; 
+    overflow: hidden; /* Ẩn thanh cuộn */
+}   
+.donate-content-container-item-content {
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: 'Times New Roman', Times, serif; /* Thay đổi font chữ */
+    animation: scrollFadeIn 1s ease-in-out; /* Thêm hiệu ứng mờ dần khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-container-item-img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    animation: scrollZoomIn 1.5s ease-in-out; /* Thêm hiệu ứng phóng to khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-container-item-img img{
+    max-width: 100%;
+    height: auto;
+    animation: scrollZoomIn 1.5s ease-in-out; /* Thêm hiệu ứng phóng to khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+
+.donate-content-feedback {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    animation: scrollFadeInUp 1.5s ease-in-out; /* Thêm hiệu ứng mờ dần từ dưới lên khi cuộn */
+    overflow: hidden; /* Ẩn thanh cuộn */
+}
+.donate-content-feedback-text {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #b71c1c;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    animation: scrollFadeIn 1s ease-in-out; /* Thêm hiệu ứng mờ dần khi cuộn */
+}
+.feedback-slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: auto;
+    border-radius: 20px;
+    animation: scrollSlideInUp 1s ease-in-out; /* Thêm hiệu ứng trượt lên khi cuộn */
+}
+.feedback-slider {
+    display: flex;
+    flex-wrap: nowrap; /* Không cho phép xuống dòng */
+    overflow-x: auto; /* Cho phép cuộn ngang nếu cần */
+    gap: 10px; /* Khoảng cách giữa các slide */
+    scrollbar-width: none; /* Ẩn thanh cuộn trên Firefox */
+    -ms-overflow-style: none;  /* Ẩn thanh cuộn trên Internet Explorer và Edge */
+    width: 100%;
+    animation: scrollSlideInUp 1s ease-in-out; /* Thêm hiệu ứng trượt lên khi cuộn */
+}
+.feedback-slider::-webkit-scrollbar {
+    display: none; /* Ẩn thanh cuộn trên Chrome, Safari và Opera */
+}
+
+.donate-content-feedback-item {
+    flex: 0 0 auto; /* Đảm bảo các slide không co giãn */
+    opacity: 1; /* Hiển thị rõ ràng tất cả các slide */
+    display: block;
+    width: 350px; /* Đặt chiều rộng cố định cho mỗi slide */
+    box-sizing: border-box;
+    padding: 25px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    height: 680px;
+    margin: 10px;
+    position: relative;
+    animation: scrollFadeIn 1s ease-in-out; /* Thêm hiệu ứng mờ dần khi cuộn */
+}
+.donate-content-feedback-item.active {
+    opacity: 1; /* Slide được chọn sẽ rõ ràng */
+}
+.donate-content-feedback-item-img {
+    margin-bottom: 25px;
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    height: 360px;
+    padding-right: 20px;
+    animation: scrollZoomIn 1.5s ease-in-out; 
+    overflow: hidden;   /* Thêm hiệu ứng phóng to khi cuộn */
+}
+.donate-content-feedback-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    height: 360px;
+    animation: scrollZoomIn 1.5s ease-in-out; /* Thêm hiệu ứng phóng to khi cuộn */
+    transition: transform 0.3s ease-in-out; /* Thêm hiệu ứng chuyển đổi khi hover */
+}
+.donate-content-feedback-item img:hover {
+    transform: scale(1.1); /* Phóng to ảnh khi hover */
+}
+.donate-content-feedback-item-name {
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    color: #333;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    animation: scrollFadeIn 1s ease-in-out; /* Thêm hiệu ứng mờ dần khi cuộn */
+}
+.donate-content-feedback-item-name p{
+    font-size: 1em;
+    color: #ff0000;
+    animation: scrollFadeIn 1s ease-in-out; /* Thêm hiệu ứng mờ dần khi cuộn */
+}
+.donate-content-feedback-item-content {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    animation: scrollFadeIn 1s ease-in-out; /* Thêm hiệu ứng mờ dần khi cuộn */
+}
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 14px;
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    animation: scrollBounceIn 1s ease-in-out; /* Thêm hiệu ứng bật vào khi cuộn */
+}
+.slider-button:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.slider-button.left {
+    left: 20px;
+}
+.slider-button.right {
+    right: 20px;
+}
+.feedback-slider {
+    display: flex;
+    transition: transform 0.6s ease;
+}
+.donate-content-feedback-btn{
+    margin-top: 20px;
+    animation: scrollFadeInUp 1.5s ease-in-out; /* Thêm hiệu ứng mờ dần từ dưới lên khi cuộn */
+}
+.donate-content-feedback-btn a{
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    animation: scrollPulse 2s infinite; /* Thêm hiệu ứng nhịp đập khi cuộn */
+}
+.donate-total{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    font-family: 'Times New Roman', Times, serif;
+    animation: scrollFadeInUp 1.5s ease-in-out;
+}
+.donate-total span{
+    color: #ff0000;
+}
+.donate-total strong{
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+}
+
+@media only screen and (max-width: 1550px) {
+    .donate-content-header-btn{
+        position: absolute;
+        top: 14%;
+        left: 21%;
+    }
+}
+@media only screen and (max-width: 1050px) {
+
+    .donate-content-header{
+        height: 400px;
+    }
+    .donate-content-header-text {
+        font-size: 20px;
+        left: 10px;
+        width: 80%;
+    }
+    .donate-content-header-btn {
+        top: 10%;
+        left: 10%;
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    .donate-content-container-item {
+        width: 90%;
+        margin-left: -10%;
+    }
+    .donate-content-container-item-text {
+        font-size: 18px;
+    }
+    .donate-content-container-item-content {
+        font-size: 14px;
+    }
+    .donate-content-feedback-text {
+        font-size: 20px;
+    }
+    .donate-content-feedback-item {
+        width: 90%;
+        height: auto;
+    }
+    .donate-content-feedback-item img {
+        height: auto;
+    }
+    .donate-total {
+        font-size: 16px;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        transform: scale3d(0.9, 0.9, 0.9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        transform: scale3d(0.97, 0.97, 0.97);
+    }
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        color: #ff0000;
+    }
+    50% {
+        color: #00ff00;
+    }
+    100% {
+        color: #ff0000;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scrollFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scrollSlideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scrollZoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes scrollBounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        transform: scale3d(0.9, 0.9, 0.9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        transform: scale3d(0.97, 0.97, 0.97);
+    }
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes scrollPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+

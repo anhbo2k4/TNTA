@@ -1,0 +1,186 @@
+<%- include('head') %>
+<body>
+ <main class="hp-bg-color-dark-90 d-flex min-vh-100">
+   <%- include('navbar') %>
+   <div class="hp-main-layout-content">
+      <div class="row mb-32 g-32">
+         <div class="col flex-grow-1 overflow-hidden">
+            <div class="row g-32">
+               <div class="col-12">
+                 <div class="hp-border-color-black-0 hp-border-color-dark-80 hp-bg-black-20 hp-bg-dark-80 hp-rounded-12">
+                    <div class="card-body">
+                       <h1 class="hp-mb-0">Create New Post</h1>
+                       <div class="table-responsive">
+                        <form action="/create" method="POST" enctype="multipart/form-data">
+                           <div class="form-group mb-3">
+                              <label for="title" class="form-label">Title</label>
+                              <textarea class="form-control" id="title" name="title" required></textarea>
+                           </div>
+                           <div class="form-group mb-3">
+                              <input type="hidden" name="authorId" value="1">
+                           </div>
+                           <div class="form-group mb-3">
+                              <label for="content" class="form-label">Content</label>
+                              <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+                           </div>
+                           <div class="form-group mb-3">
+                              <label for="categoryId" class="form-label">Category</label>
+                              <select class="form-select" id="categoryId" name="categoryId" required>
+                                 <% categories.forEach(category => { %>
+                                 <option value="<%= category.id %>"><%= category.name %></option>
+                                 <% }); %>
+                              </select>
+                           </div>
+                           <div class="form-group mb-3">
+                              <label for="image" class="form-label">Image</label>
+                              <input type="file" class="form-control" id="imageUrl" name="image" required>
+                              <canvas id="imageCanvas" style="border:1px solid #000;"></canvas>
+                              <button type="button" id="cropImageBtn">Crop Image</button>
+                              <button type="button" id="resetImageBtn">Reset Image</button>
+                           </div>
+                           <div class="form-group mb-3">
+                              <label for="audio" class="form-label">Audio</label>
+                              <input type="file" class="form-control" id="audioUrl" name="audio">
+                           </div>
+                           <button type="submit" class="btn btn-primary">Create</button>
+                        </form>
+                        <p class="text-danger mt-3">Title, content, and category are required.</p>
+                       </div>
+                    </div>
+                 </div>
+               </div>
+            </div>
+          </div>
+      </div>
+   </div>
+ </main>
+
+ <!-- CKEditor Script -->
+ <script src="/ckeditor/ckeditor.js"></script>
+
+ <script>
+    // Apply CKEditor to all textareas
+    CKEDITOR.replace('title', {
+        toolbar: [
+            { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'Undo', 'Redo'] },
+            { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline'] },
+            { name: 'paragraph', items: ['NumberedList', 'BulletedList'] },
+            { name: 'insert', items: ['Image', 'Table', 'Link'] },
+            { name: 'styles', items: ['FontSize', 'TextColor', 'BGColor'] }
+        ],
+        height: 100,
+        autoGrow_minHeight: 100,
+        autoGrow_maxHeight: 200,
+        autoGrow_bottomSpace: 20
+    });
+    CKEDITOR.replace('slug', {
+        toolbar: [
+            { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'Undo', 'Redo'] },
+            { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline'] },
+            { name: 'paragraph', items: ['NumberedList', 'BulletedList'] },
+            { name: 'insert', items: ['Image', 'Table', 'Link'] },
+            { name: 'styles', items: ['FontSize', 'TextColor', 'BGColor'] }
+        ],
+        height: 100,
+        autoGrow_minHeight: 100,
+        autoGrow_maxHeight: 200,
+        autoGrow_bottomSpace: 20
+    });
+    CKEDITOR.replace('content', {
+        toolbar: [
+            { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'Undo', 'Redo'] },
+            { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline'] },
+            { name: 'paragraph', items: ['NumberedList', 'BulletedList'] },
+            { name: 'insert', items: ['Image', 'Table', 'Link'] },
+            { name: 'styles', items: ['FontSize', 'TextColor', 'BGColor'] }
+        ],
+        height: 400,
+        autoGrow_minHeight: 400,
+        autoGrow_maxHeight: 800,
+        autoGrow_bottomSpace: 50
+    });
+
+    const imageInput = document.getElementById('imageUrl');
+                              const canvas = document.getElementById('imageCanvas');
+                              const ctx = canvas.getContext('2d');
+                              const cropImageBtn = document.getElementById('cropImageBtn');
+                              const resetImageBtn = document.getElementById('resetImageBtn');
+
+                              let img = new Image();
+                              let originalImageSrc = '';
+                              let isDragging = false;
+                              let startX, startY, endX, endY;
+
+                              imageInput.addEventListener('change', () => {
+                                  const file = imageInput.files[0];
+                                  if (file) {
+                                      const reader = new FileReader();
+                                      reader.onload = (e) => {
+                                          img.onload = () => {
+                                              originalImageSrc = e.target.result;
+                                              canvas.width = img.width;
+                                              canvas.height = img.height;
+                                              ctx.drawImage(img, 0, 0);
+                                              canvas.style.display = 'block';
+                                          };
+                                          img.src = e.target.result;
+                                      };
+                                      reader.readAsDataURL(file);
+                                  }
+                              });
+
+                              canvas.addEventListener('mousedown', (e) => {
+                                  isDragging = true;
+                                  startX = e.offsetX;
+                                  startY = e.offsetY;
+                              });
+
+                              canvas.addEventListener('mousemove', (e) => {
+                                  if (isDragging) {
+                                      endX = e.offsetX;
+                                      endY = e.offsetY;
+                                      draw();
+                                  }
+                              });
+
+                              canvas.addEventListener('mouseup', () => {
+                                  isDragging = false;
+                              });
+
+                              function draw() {
+                                  ctx.clearRect(0, 0, canvas.width, canvas.height);
+                                  ctx.drawImage(img, 0, 0);
+                                  if (isDragging) {
+                                      ctx.strokeStyle = 'red';
+                                      ctx.lineWidth = 2;
+                                      ctx.strokeRect(startX, startY, endX - startX, endY - startY);
+                                  }
+                              }
+
+                              cropImageBtn.addEventListener('click', () => {
+                                  const cropWidth = endX - startX;
+                                  const cropHeight = endY - startY;
+
+                                  const tempCanvas = document.createElement('canvas');
+                                  const tempCtx = tempCanvas.getContext('2d');
+                                  tempCanvas.width = cropWidth;
+                                  tempCanvas.height = cropHeight;
+
+                                  tempCtx.drawImage(canvas, startX, startY, cropWidth, cropHeight, 0, 0, cropWidth, cropHeight);
+
+                                  ctx.clearRect(0, 0, canvas.width, canvas.height);
+                                  canvas.width = cropWidth;
+                                  canvas.height = cropHeight;
+                                  ctx.drawImage(tempCanvas, 0, 0);
+                              });
+
+                              resetImageBtn.addEventListener('click', () => {
+                                  img.src = originalImageSrc;
+                                  img.onload = () => {
+                                      canvas.width = img.width;
+                                      canvas.height = img.height;
+                                      ctx.drawImage(img, 0, 0);
+                                  };
+                              });
+ </script>
+</body>

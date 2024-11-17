@@ -1,0 +1,40 @@
+<%- include('head') %>
+<body>
+ <main class="hp-bg-color-dark-90 d-flex min-vh-100">
+   <%- include('navbar') %>
+   <div class="hp-main-layout-content">
+      <div class="row mb-32 g-32">
+         <div class="col flex-grow-1 overflow-hidden">
+            <div class="row g-32">
+               <div class="col-12">
+                 <div class="hp-border-color-black-0 hp-border-color-dark-80 hp-bg-black-20 hp-bg-dark-80 hp-rounded-12">
+                    <div class="card-body">
+                       <h1 class="hp-mb-0">Update Category</h1>
+                       <div class="table-responsive">
+                        <form action="/category/create" method="POST" enctype="multipart/form-data">
+                           <div class="form-group mb-3">
+                              <label for="name" class="form-label">Name</label>
+                              <input type="text" class="form-control" id="name" name="name" >
+                           </div>
+                           <div class="form-group mb-3">
+                              <label for="description" class="form-label">Description</label>
+                              <textarea class="form-control" id="description" name="description"></textarea>
+                           </div>
+                           <div class="form-group mb-3">
+                              <label for="image" class="form-label">Image</label>
+                              <input type="file" class="form-control" id="image" name="image">
+                           </div>
+                           <button type="submit" class="btn btn-primary">Create</button>
+                        </form>
+                        <p class="text-danger mt-3">Name and description are required.</p>
+                       </div>
+                    </div>
+                  
+                 </div>
+               </div>
+            </div>
+          </div>
+      </div>
+   </div>
+ </main>
+</body>
